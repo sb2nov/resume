@@ -97,13 +97,13 @@
       {Data Reliability Engineer}{May 2016 - December 2017}
       \resumeItemListStart
         \resumeItem{MySQL Database Server Auto Scaling}
-          {Levering on existing tooling that existed inside Yelp, I built a system that would automatically scale all of our MySQL database clusters based on CPU usage and average query time.}
-        \resumeItem{PostgreSQL Performance Optimization}
-          {I optimized the PostgreSQL databases of Eat24 and SeatMe, two of Yelp's subsidiaries, which resulted in better performance and fewer AWS instances needing to be used.}
-        \resumeItem{SignalFX Maintainability}
-          {Migrated all of the DRE team's SignalFX charts and detectors to use \href{https://github.com/Yelp/terraform-provider-signalform}{SignalForm}, thereby moving all the definitions into maintainable code.}
+          {Built software that intelligently scaled our MySQL clusters based on CPU usage and average query time leveraging in house tooling as well as custom automation written in Python.}
+        \resumeItem{PostgreSQL Optimization}
+          {Responsible for optimizing multiple PostgreSQL database clusters for better performance, which reduced the number AWS instances resulting in a substantial cost savings.}
+        \resumeItem{Operational Maintainability}
+          {Migrated all of the DRE team’s SignalFX charts and detectors from manually created dashboards to use SignalForm, thereby moving all the definitions into version controlled code. Reducing mistakes and increasing maintainability and reducing variance.}
         \resumeItem{MySQL Specific AMI}
-          {Using Packer I developed a MySQL specific AMI which allowed new database hosts to be ready for production in 1/4 of their original bootstrap time.}
+          {Reduced production database deployment time by \%75 by rewriting the bootstrapping process using Packer to build custom baked MySQL images.}
         \resumeItem{Other Achievements}
           {
             \begin{itemize}[noitemsep]
@@ -120,11 +120,11 @@
       {Database Administrator}{May 2013 - April 2016}
       \resumeItemListStart
         \resumeItem{PostgreSQL Automated Backup Testing}
-          {I built a solution that would backup our 200+ PostgreSQL databases, restore them to verify backup was valid, and attach them to the appropriate replication stream to make sure we could use the backup in a DR scenario.}
+          {Crated an automation pipeline in Python to backup our 200+ prodution PostgreSQL databases, restore them to verify backup was valid, and attach them to the appropriate replication stream to make sure we could use the backup in a DR scenario.}
         \resumeItem{Automatic Setup of PostgreSQL Replica Servers}
-          {DBAs at Pandora originally would manually configure replica servers, and I deeloped a solution was to use our service discovery to figure out the correct service to bootstrap from, and then to connect to its replication stream.}
+          {Implemented service discovery for database bootstrapping and replication, saving the DBA team hundreds of hours of manual configuration.}
         \resumeItem{PostgreSQL Performance Analysis Tooling}
-          {I built a framework that would gather internal PostgreSQL metrics into a time-series database so that DBAs and Developers to easily query database health and performance.}
+          {Developed a pluggable framework to gather time-series metrics, and then used that to gather internal PostgreSQL metrics for performance analytics.}
         \resumeItem{Other Achievements}
           {
             \begin{itemize}[noitemsep]
@@ -138,8 +138,8 @@
       {Rentrak}{Portland, OR}
       {Database Administrator}{August 2011 - May 2013}
         \begin{itemize}[noitemsep]
-        \item Decreasing PostgreSQL backup time by a factor of ten.
-        \item Implementing read-only database clones by leveraging NetApp snapshots.
+        \item Decreased PostgreSQL backup time by a factor of ten.
+        \item Implemented read-only database clones by leveraging NetApp snapshots.
         \item Migration from physical PostgreSQL servers to HA VMware/NetApp environment.
         \item Developed and delivered internal auditing tools that decreased the DBA workload.
         \end{itemize}
@@ -148,7 +148,7 @@
       {Elemental Technologies}{Portland, OR}
       {Software Test Engineer (Contract)}{January 2011 - June 2011}
         \begin{itemize}[noitemsep]
-        \item I worked on testing Elemental's two main products for compliance to many different video standards. On a daily basis I was encoding and watching different video files, as well as watching live video. I was also responsible for the performance testing on Elemental's major releases.
+        \item Worked on testing Elemental's two main products for compliance to many different video standards. Daily tasks included encoding and watching different video files, as well as watching live video. I was also responsible for the performance testing on Elemental's major releases.
          \end{itemize}
 
   \resumeSubHeadingListEnd
