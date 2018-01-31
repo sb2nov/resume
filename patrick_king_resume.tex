@@ -1,0 +1,176 @@
+%-------------------------
+% Resume in Latex
+% Author: Patrick King
+% Template by: Sourabh Bajaj
+% License: MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks = true,
+    urlcolor = {blue},
+    linkbordercolor = {blue},
+    pdfborderstyle = {/S/U/W 1},
+}
+
+\usepackage{fancyhdr}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large Patrick King} & Mobile: +1-503-805-4667 \\
+  \href{patrick@patrickcking.com}{patrick@patrickcking.com} & Location: Portland, OR\\
+\end{tabular*}
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Yelp}{San Francisco, CA}
+      {Data Reliability Engineer}{May 2016 - December 2017}
+      \resumeItemListStart
+        \resumeItem{MySQL Database Server Auto Scaling}
+          {Levering on existing tooling that existed inside Yelp, I built a system that would automatically scale all of our MySQL database clusters based on CPU usage and average query time.}
+        \resumeItem{PostgreSQL Performance Optimization}
+          {I optimized the PostgreSQL databases of Eat24 and SeatMe, two of Yelp's subsidiaries, which resulted in better performance and fewer AWS instances needing to be used.}
+        \resumeItem{SignalFX Maintainability}
+          {Migrated all of the DRE team's SignalFX charts and detectors to use \href{https://github.com/Yelp/terraform-provider-signalform}{SignalForm}, thereby moving all the definitions into maintainable code.}
+        \resumeItem{MySQL Specific AMI}
+          {Using Packer I developed a MySQL specific AMI which allowed new database hosts to be ready for production in 1/4 of their original bootstrap time.}
+        \resumeItem{Other Achievements}
+          {
+            \begin{itemize}[noitemsep]
+            \item Upgraded MySQL across all environments to the most recent major version.
+            \item Wrote a tool that would compare MySQL binary logs between two version of MySQL.
+            \item Leveraged data contained in Splunk to write a predictive disk space alert for our MySQL servers.
+            \item Deployed VividCortex as a database monitoring solution, and taught courses on how to use its data.
+            \end{itemize}
+          }
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Pandora Media, Inc}{Oakland, CA}
+      {Database Administrator}{May 2013 - April 2016}
+      \resumeItemListStart
+        \resumeItem{PostgreSQL Automated Backup Testing}
+          {I built a solution that would backup our 200+ PostgreSQL databases, restore them to verify backup was valid, and attach them to the appropriate replication stream to make sure we could use the backup in a DR scenario.}
+        \resumeItem{Automatic Setup of PostgreSQL Replica Servers}
+          {DBAs at Pandora originally would manually configure replica servers, and I deeloped a solution was to use our service discovery to figure out the correct service to bootstrap from, and then to connect to its replication stream.}
+        \resumeItem{PostgreSQL Performance Analysis Tooling}
+          {I built a framework that would gather internal PostgreSQL metrics into a time-series database so that DBAs and Developers to easily query database health and performance.}
+        \resumeItem{Other Achievements}
+          {
+            \begin{itemize}[noitemsep]
+            \item Major upgrade of PostgreSQL across our entire environment.
+            \item Hadoop and Hive administration.
+            \end{itemize}
+          }
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Rentrak}{Portland, OR}
+      {Database Administrator}{August 2011 - May 2013}
+        \begin{itemize}[noitemsep]
+        \item Decreasing PostgreSQL backup time by a factor of ten.
+        \item Implementing read-only database clones by leveraging NetApp snapshots.
+        \item Migration from physical PostgreSQL servers to HA VMware/NetApp environment.
+        \item Developed and delivered internal auditing tools that decreased the DBA workload.
+        \end{itemize}
+
+    \resumeSubheading
+      {Elemental Technologies}{Portland, OR}
+      {Software Test Engineer (Contract)}{January 2011 - June 2011}
+        \begin{itemize}[noitemsep]
+        \item I worked on testing Elemental's two main products for compliance to many different video standards. On a daily basis I was encoding and watching different video files, as well as watching live video. I was also responsible for the performance testing on Elemental's major releases.
+         \end{itemize}
+
+  \resumeSubHeadingListEnd
+
+
+%-----------CONFERENCE TALKS-----------------
+\section{Conference Presentations}
+  \resumeSubHeadingListStart
+    \resumeSubItem{PostgreSQL to MySQL: A DBA Perspective - Percona Live 2017}
+      {My retrospective after one year of transitioning from a PostgreSQL DBA to a MySQL DBA.}
+    \resumeSubItem{Using pg\_repack to Bulk Delete Data - Postgres Vision 2016}
+      {A 15 minute presentation about using  pg\_repack to bulk delete data from highly contested tables.}
+  \resumeSubHeadingListEnd
+
+
+%--------TECHNOLOGY SKILLS------------
+\section{Technical Skills}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Technologies}
+      {PostgreSQL, MySQL, Puppet, AWS, Terraform, Packer, SignalFX, Splunk, VividCortex}
+    \resumeSubItem{Languages}
+      {SQL, Python, Bash}
+  \resumeSubHeadingListEnd
+%-------------------------------------------
+\end{document}

@@ -1,2 +1,5 @@
-# Archieve
-Archieve/
+*.aux
+*.log
+*.out
+*.synctex.gz
+.DS_Store
