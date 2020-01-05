@@ -44,9 +44,9 @@
 
 %-------------------------
 % Custom commands
-\newcommand{\resumeItem}[2]{
+\newcommand{\resumeItem}[1]{
   \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
+    {#1 \vspace{-2pt}}
   }
 }
 
@@ -56,6 +56,35 @@
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeProject}[1]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeResearch}[5]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} {\small #4 \vspace{-2pt}} & \textit{\small #5} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeTalk}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeLeadership}[2]{
+  \item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      #1 & #2
+    \end{tabular*}
 }
 
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
@@ -75,8 +104,8 @@
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-  \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+  \textbf{\href{http://changh95.github.io}{\Large Hyunggi Chang}} & Email : \href{mailto:hyunggi.chang95@gmail.com}{hyunggi.chang95@gmail.com}\\
+  \href{http://changh95.github.io}{http://changh95.github.io} & Mobile : (+82) 010-2885-4493 \\
 \end{tabular*}
 
 
@@ -84,99 +113,295 @@
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Master of Science in Computer Science;  GPA: 4.00}{Aug. 2012 -- Dec. 2013}
+      {Imperial College London}{London, UK}
+      {M.Res. in Medical Robotics and Image-Guided Intervention;  \textbf{Merit}}{Oct. 2017 -- Sept. 2018}
     \resumeSubheading
-      {Birla Institute of Technology and Science}{Pilani, India}
-      {Bachelor of Engineering in Electrical and Electronics;  GPA: 3.66 (9.15/10.0)}{Aug. 2008 -- July. 2012}
+      {University of Warwick}{Coventry, UK}
+      {B.Eng. in Manufacturing and Mechanical Engineering; \textbf{GPA (4.34/4,50)}}{Oct. 2014 -- Jun. 2017}
   \resumeSubHeadingListEnd
-
 
 %-----------EXPERIENCE-----------------
-\section{Experience}
+\section{Research Experiences}
+  \resumeSubHeadingListStart
+
+    \resumeResearch
+      {Cavendish Laboratory, University of Cambridge}{Cambridgeshire, UK}
+      {Visiting Researcher,}{Advisor: Dr. Sarah Bohndiek}{Jan. 2019 - Mar. 2019}
+      \resumeItemListStart
+        \resumeItem {3.5D hyperspectral point cloud generation, using Structure from Motion (SfM) and spectral-spatio-matching.}
+        \resumeItem {Wide-field multi-fibre endoscopic imaging device simulation.}
+      \resumeItemListEnd
+      
+    \resumeResearch
+      {Surgical Imaging and Biophotonics Laboratory, Imperial College London}{London, UK}
+      {M.Res Student Researcher,}{Advisor: Prof. Daniel Elson}{Jan. 2018 - Sept. 2018}
+      \resumeItemListStart
+        \resumeItem {Real-time vision-based surgical tool tracking and augmented reality visualisation.}
+        \resumeItem {Real-time biomedical spectroscopic data classification using machine learning.}
+      \resumeItemListEnd
+      
+      \resumeResearch
+      {HARMS Lab, Imperial College London}{London, UK}
+      {M.Res Student Researcher,}{Advisor: Dr. George Mynolas}{Oct. 2017 - Dec. 2017}
+      \resumeItemListStart
+        \resumeItem {Hand motion transfer to robotic movements in surgical scenarios.}
+        \resumeItem {Design improvements of an endoscopic robot.}
+      \resumeItemListEnd
+      
+    \resumeResearch
+      {Trace Metals in Medicine Laboratory, University of Warwick}{Coventry, UK}
+      {B.Eng Student Researcher,}{Advisor: Dr. Joanna Collingwood}{Oct. 2016 - Jun. 2017}
+      \resumeItemListStart
+        \resumeItem {Design of an educational MRI phantom for deliberate artifact generation.}
+      \resumeItemListEnd
+     
+     \resumeResearch
+      {International Institute for Product and Service Innovation, WMG}{Coventry, UK}
+      {B.Eng Student Researcher,}{Advisor: Mr. Graeme Knowles}{Oct. 2016 - Jun. 2017}
+      \resumeItemListStart
+        \resumeItem {Qualitative study in quality engineering techniques.}
+      \resumeItemListEnd
+     
+      
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Work Experiences}
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Google}{Mountain View, CA}
-      {Software Engineer}{Oct 2016 - Present}
+      {VIRNECT}{Seoul, South Korea}
+      {Computer Vision Research Engineer}{Apr. 2019 - Present}
       \resumeItemListStart
-        \resumeItem{Tensorflow}
-          {TensorFlow is an open source software library for numerical computation using data flow graphs; primarily used for training deep learning models. Worked on APIs and performance for training models on Tensor Processing Units (TPU).}
-        \resumeItem{Apache Beam}
-          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines, as well as a set of language-specific SDKs for constructing pipelines and runners.}
+        \resumeItem
+          {Research and develop geometric vision algorithms for augmented reality applications.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Coursera}{Mountain View, CA}
-      {Senior Software Engineer}{Jan 2014 - Oct 2016}
+      {McKinsey \& Company}{New York, USA}
+      {Student Analyst}{Oct 2017 - Dec 2017}
       \resumeItemListStart
-        \resumeItem{Notifications}
-          {Service for sending email, push and in-app notifications. Involved in features such as delivery time optimization, tracking, queuing and A/B testing. Built an internal app to run batch campaigns for marketing etc.}
-        \resumeItem{Nostos}
-          {Bulk data processing and injection service from Hadoop to Cassandra and provides a thin REST layer on top for serving offline computed data online.}
-        \resumeItem{Workflows}
-          {Dataduct an open source workflow framework to create and manage data pipelines leveraging reusables patterns to expedite developer productivity.}
-        \resumeItem{Data Collection}
-          {Designed the internal survey and crowd sourcing platform which allowed for creating various tasks for crowd sourcing or embedding surveys across the Coursera platform.}
-        \resumeItem{Dev Environment}
-          {Analytics environment based on docker and AWS, standardized the python and R dependencies. Wrote the core libraries that are shared by all data scientists.}
-        \resumeItem{Data Warehousing}
-          {Setup, schema design and management of Amazon Redshift. Built an internal app for access to the data using a web interface. Dataduct integration for daily ETL injection into Redshift.}
-        \resumeItem{Recommendations}
-          {Core service for all recommendation systems at Coursera, currently used on the homepage and throughout the content discovery process. Worked on both offline training and online serving.}
-        \resumeItem{Content Discovery}
-          {Improved content discovery by building a new onboarding experience on coursera. Using this to personalize the search and browse experience. Also worked on ranking and indexing improvements.}
-        \resumeItem{Course Dashboards}
-          {Instructor dashboards and learner surveying tools, which helped instructors run their class better by providing data on Assignments and Learner Activity.}
+        \resumeItem
+        {Market analysis and forecast of commercial robot and artificial intelligence technology.}    
+        \resumeItem
+        {Taught McKinsey business consultants on robotics industry.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Lucena Research}{Atlanta, GA}
-      {Data Scientist}{Summer 2012 and 2013}
+      {CACTUS Communications}{London, UK}
+      {Freelance Translator}{Oct. 2016 - Jun. 2018}
       \resumeItemListStart
-        \resumeItem{Portfolio Management}
-          {Created models for portfolio hedging,  portfolio optimization and price forecasting. Also creating a strategy backtesting engine used for simulating and backtesting strategies.}
-        \resumeItem{QuantDesk}
-          {Python backend for a web application used by hedge fund managers for portfolio management.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Research and Teaching Assistant}{Jan 2012 - Dec 2013}
-      \resumeItemListStart
-        \resumeItem{Research Assistant - Machine Learning}
-          {Research on machine learning for portfolio hedging and replication algorithms. Modeling low-risk \& continuous-return strategies. Developed the python library QSTK.}
-        \resumeItem{Teaching Assistant - Computational Investing}
-          {The online course on Coursera, had more than 100,000 students enrolled. It was featured on the 11 Alive News and the Atlanta Journal Constitution. Involved in creating assignment, exams and conducting recitation sessions. Also taught the on-campus version of the course.}
+        \resumeItem
+          {Translated MS/PhD thesis and papers from Korean to English and vice-versa on various engineering fields.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
 
-%-----------PROJECTS-----------------
+%-----------Skills-----------------
+\section{Skills}
+  \resumeSubHeadingListStart
+    \resumeSubItem{\textbf{Languages :}}
+      {Korean (Native), English (Bilingual)}
+    \resumeSubItem{\textbf{Programming :}}
+      {C, C++11/14, MATLAB, Python}
+    \resumeSubItem{\textbf{Computer Vision :}}
+      {OpenCV, Eigen, Ceres-solver, FFmpeg, Dlib, PyTorch, OpenVINO,  MeshLab }
+    \resumeSubItem{\textbf{Camera :}}
+      {Intel RealSense, MS Kinect, Stereolabs ZED, FLIR Spinnaker, Optitrack Motive}
+    \resumeSubItem{\textbf{Prototype :}}
+      {SolidWorks, AutoCAD, AlphaCAM, 3D Printer, Laser cutter, Core workshop machines}
+    \resumeSubItem{\textbf{Collaborative Development :}}
+      {Git, GTest, Clang-format, Doxygen, JIRA, Slack, TeamCity}
+    \resumeSubItem{\textbf{Other :}}
+      {Rpi, Arduino, Nvidia Jetson, ROS, AirSim, ABB Robot Studio, CMake, LaTeX}
+    \resumeSubItem{\textbf{Next 6 months :}}
+      {CUDA, TensorRT, ONNX, PCL}
+  \resumeSubHeadingListEnd
+
+%-----------Projects-----------------
+
 \section{Projects}
   \resumeSubHeadingListStart
-    \resumeSubItem{QuantSoftware Toolkit}
-      {Open source python library for financial data analysis and machine learning for finance.}
-    \resumeSubItem{Github Visualization}
-      {Data Visualization of Git Log data using D3 to analyze project trends over time.}
-    \resumeSubItem{Recommendation System}
-      {Music and Movie recommender systems using collaborative filtering on public datasets.}
-    \resumeSubItem{Mac Setup}
-      {Book that gives step by step instructions on setting up developer environment on Mac OS.}
+    \resumeProject
+      {SLAM to Replace Light Probe}
+      \resumeItemListStart
+        \resumeItem {Semi-dense SLAM that is aware of light-sources to create an environmental cube map for ray-tracing.}
+      \resumeItemListEnd
+    \resumeProject
+      {VIRNECT AR SDK}
+      \resumeItemListStart
+        \resumeItem {Generation of test data and ground-truth data, using AirSim and Optitrack Motion Capture.}
+        \resumeItem {Evaluation and validation of image tracking and SLAM algorithms with automatic report generation.}
+        \resumeItem {GTest for software quality assurance of vision algorithms.}
+      \resumeItemListEnd
+    \resumeProject
+      {Real-Time Welding Guidance using Augmented Reality}
+      \resumeItemListStart
+        \resumeItem {Tracking of welding torch and HMD using fiducial markers and IMU under extreme light condition.}
+      \resumeItemListEnd
+    \resumeProject
+      {Marker-based Tool Tracker on Tabletop Scenario and Novel Multi-Camera Calibration Method}
+      \resumeItemListStart
+        \resumeItem {Multi-view tool tracking using Perspective-n-Points (PnP) Algorithm with optimisation for minimal reprojection error.}
+        \resumeItem {Auto-calibration of camera extrinsics and the geometric relationship of marker-to-tooltip.}
+      \resumeItemListEnd
+    \resumeProject
+      {Building IR Motion Capture System with IMU, F/T, Video Genlock}
+      \resumeItemListStart
+        \resumeItem {System setup of motion/dynamics capture system using Optitrack IR cameras, RGB cameras, IMU, and force/torque sensors on perfect time sync.}
+      \resumeItemListEnd
+    \resumeProject
+      {Affordable Hyperspectral Imaging System}
+      \resumeItemListStart
+        \resumeItem {System setup of an affordable hyperspectral imaging rig, using light-sources of various spectral bands.}
+      \resumeItemListEnd
+    \resumeProject
+      {Omni-directional RGB-D Camera}
+      \resumeItemListStart
+        \resumeItem {Real-time omni-directional RGB-D imaging, using multiple RGB-D Cameras.}
+      \resumeItemListEnd
+    \resumeProject
+      {Mobile Rover for Environment Mapping and Survivor Detection in Disaster Scenarios}
+      \resumeItemListStart
+        \resumeItem {Voice-controllable rover, using RGB-D SLAM, object detection, and collision-avoidance.}
+        \resumeItem {Award winning project at MODU Embedded AI Hackathon.}
+      \resumeItemListEnd
+    \resumeProject
+      {Structure from Motion with Dynamic Objects}
+      \resumeItemListStart
+        \resumeItem {Attempt to extract static map from dynamic scene, using only epipolar constraints.}
+      \resumeItemListEnd
+    \resumeProject
+      {Snapchat-like Face Filters}
+      \resumeItemListStart
+        \resumeItem {Spot-removal filter, AR Kawaii-filter, Emotion masks, and Panda-face filter, using OpenCV and Dlib.}
+      \resumeItemListEnd
+    \resumeProject
+      {Make Surgical Scenes Less Disturbing}
+      \resumeItemListStart
+        \resumeItem {Reduced visual discomfort in surgical scenes via neural-style algorithm and frame buffer.}
+      \resumeItemListEnd
+    \resumeProject
+      {Surgical Cobot Control with Gaze Control and QR Code Commands}
+      \resumeItemListStart
+        \resumeItem {A concept code to use cobots in surgical theatre to pick up and pass tools to surgeons}
+      \resumeItemListEnd
+    \resumeProject
+      {Depth Mapping and Visualisation using Multiple Webcams}
+      \resumeItemListStart
+        \resumeItem {Real-time depth map generation using affordable webcams.}
+      \resumeItemListEnd
+    \resumeProject
+      {A Real-Time Intraoperative Data Mapping Device for Probe-Based Measurements}
+      \resumeItemListStart
+        \resumeItem {Customised optical biopsy system, using diffuse reflectance spectroscopy.}
+        \resumeItem {Multi-camera configuration for vision-based surgical instrument tracking.}
+        \resumeItem {Design ergonomic control and visualisation hardware and system.}
+      \resumeItemListEnd
+    \resumeProject
+      {Intraoperative Tissue Classification using Hyperspectral Sensing}
+      \resumeItemListStart
+        \resumeItem {Cancer identification from optical spectroscopic data, using machine learning.}
+      \resumeItemListEnd
+    \resumeProject
+      {Vision-Based Endoscopic Navigation Using SLAM}
+      \resumeItemListStart
+        \resumeItem {Monocular visual SLAM on a rigid colon phantom.}
+      \resumeItemListEnd
+    \resumeProject
+      {Motion Capture for Optimisation of Endoscopic Robot for Bi-Manual Suturing}
+      \resumeItemListStart
+        \resumeItem {Hand motion transfer from a surgeon to a surgical robot, using Optitrack and ATI F/T.}
+        \resumeItem {Exploit and optimise the robot's mechanical configuration, based on required motion trends}
+      \resumeItemListEnd
+    \resumeProject
+      {Robotic Path Planning for Beating Heart Surgery}
+      \resumeItemListStart
+        \resumeItem {MATLAB simulation for inverse kinematics of a PUMA robot on dynamic trajectory.}
+      \resumeItemListEnd
+    \resumeProject
+      {Development of modular training phantom for MRI radiologists}
+      \resumeItemListStart
+        \resumeItem {Product development study for maximum customer satisfaction.}
+        \resumeItem {An educational MRI phantom for deliberate image artifact generation}
+      \resumeItemListEnd
+    \resumeProject
+      {Analysis of Industry 4.0 Manufacturing System Architecture on Quality Perspective}
+      \resumeItemListStart
+        \resumeItem {Literature review of technological advances on Industry 4.0.}
+      \resumeItemListEnd
+    \resumeProject
+      {Text Writing Robot}
+      \resumeItemListStart
+        \resumeItem {ABB robot programming to convert text into physical writing.}
+      \resumeItemListEnd
   \resumeSubHeadingListEnd
 
-%
-%--------PROGRAMMING SKILLS------------
-%\section{Programming Skills}
-%  \resumeSubHeadingListStart
-%    \item{
-%      \textbf{Languages}{: Scala, Python, Javascript, C++, SQL, Java}
-%      \hfill
-%      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
-%    }
-%  \resumeSubHeadingListEnd
+%-----------Patents-----------------
 
+\section{Patents}
+  \resumeSubHeadingListStart
+    \resumeProject{Calibration Mechanism and Method for Posture Estimation of Augmented Reality Guide Tool}
+    \resumeItemListStart
+        \resumeItem{[PENDING] \textit{T.J.Ha, \textbf{H.G.Chang}, S.H.Kim} - Ref Num: TP191060}
+    \resumeItemListEnd
+    \resumeProject{Method and System for Posture Estimation about Object Tracking Taken by Camera}
+    \resumeItemListStart
+        \resumeItem{[PENDING] \textit{T.J.Ha, \textbf{H.G.Chang}, S.H.Kim, N.Y.Park} - Ref Num: TP191091}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+  
+%-----------Leadership-----------------
 
+\section{Leadership}
+  \resumeSubHeadingListStart
+    \resumeLeadership{\textbf{Community Leader} - Kakao Community ``We will be SLAM Masters"}{\textbf{2019}}
+    \resumeLeadership{\textbf{Community Admin} - Facebook Community "AI Robotics KR"}{\textbf{2019}}
+    \resumeLeadership{\textbf{Lead Student Ambassador} - Hamlyn Robotic \& AI Summer School}{\textbf{2018}}
+    \resumeLeadership{\textbf{Journal Club Lead} - Imperial College London}{\textbf{2018}}
+    \resumeLeadership{\textbf{Lead Student Researcher} - McKinsey \& Company}{\textbf{2017}}
+    \resumeLeadership{\textbf{Course Representative} - Imperial College London}{\textbf{2017}}
+    \resumeLeadership{\textbf{Course Representative} - University of Warwick}{\textbf{2016}}
+  \resumeSubHeadingListEnd
+
+%-----------Teaching-----------------
+\section{Teaching}
+    \resumeSubHeadingListStart
+        \resumeSubheading{Fundamentals of Simultaneous Localisation and Mapping - ORB-SLAM}{Seoul, South Korea}
+        {'We will be SLAM masters' study group}{Nov. 2019 -- PRESENT}
+            \resumeItemListStart
+                \resumeItem{Organised and led 2-months study on Modern C++ and fundamentals of SLAM.}
+                \resumeItem{Leading 2-months course on in-depth review of ORB-SLAM and its source code.}
+            \resumeItemListEnd    
+        \resumeSubheading{Medical Imaging and Image-Guided Intervention}{Seoul, South Korea}
+        {MODU Labs - Flipped Learning Scheme}{Oct.2019 -- Dec.2019}
+            \resumeItemListStart
+                \resumeItem{Taught on 11-weeks course on fundamentals of medical imaging and image-guided intervention.}
+                \resumeItem{X-ray, CT, Ultrasound, Nuclear Medicine, MRI, Microscopy, Fluorescence Imaging, Image-Guided Intervention.}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------Talks-----------------
+\section{Talks}
+    \resumeSubHeadingListStart
+        \resumeTalk{MODUCON 2019}{2019}
+            \resumeItemListStart
+                \resumeItem{Design considerations for robust computer vision systems}
+                \resumeItem{Development strategies for Deep Learning}
+            \resumeItemListEnd
+        \resumeTalk{AI Robotics KR - The First}{2019}
+            \resumeItemListStart
+                \resumeItem{Camera hardware choices for robust computer vision systems}
+            \resumeItemListEnd
+        \resumeTalk{PyCon APAC 2019}{2019}
+            \resumeItemListStart
+                \resumeItem{Lightning Talk - Robot development with Python}
+            \resumeItemListEnd
+        \resumeTalk{NVIDIA Jetson Meetup}{2019}
+            \resumeItemListStart
+                \resumeItem{NVIDIA Jetson Nano for intelligent robot development}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
 %-------------------------------------------
 \end{document}
