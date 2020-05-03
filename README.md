@@ -40,8 +40,8 @@ I created this template as a way of improving my modification system with Versio
 
 ### Preview
 
-Light theme             |  Dark theme
-:-------------------------:|:-------------------------:
+Light theme                         |  Dark theme
+:----------------------------------:|:-------------------------:
 ![Light theme](/light_preview.png)  |  ![Dark theme](/dark_preview.png)
 
 
