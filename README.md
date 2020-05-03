@@ -45,7 +45,7 @@ Light theme                         |  Dark theme
 
 I created this template as a way of improving my modification system with Version Control and to have a single source of truth when making changes on it. Also added a version of the pdf in dark theme, so it might be useful for the people reading to select which theme to see. And finally i tried to use simple tips and recommendations from Google to ensure some quality of the structure and sections.
 
-## Guideline
+## Guidelines
 
 A single-page, one-column resume for software developers (data scientist use case in my case). The different sections are clearly documented and custom commands are used to provide consistent formatting. The three main sections in the resume are education, experience, projects, certifications and personal publications.
 
