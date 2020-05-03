@@ -13,7 +13,7 @@ A latex template for CVs considering tips from [Create Your Resume for Google: T
 
 ### Web
 
-An [Overleaf](curl -sSL https://get.docker.com/ | sh) account.
+An [Overleaf](https://www.overleaf.com/) account.
 
 
 ## Getting started
