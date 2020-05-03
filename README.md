@@ -34,6 +34,8 @@ An [Overleaf](https://www.overleaf.com/) account.
 
 ### Preview
 
+> Switch themes by commenting and un-commenting the sections documented in the code
+
 Light theme                         |  Dark theme
 :----------------------------------:|:-------------------------:
 ![Light theme](/light_preview.png)  |  ![Dark theme](/dark_preview.png)
@@ -134,6 +136,6 @@ Some ideas:
 * Conference presentations.
 * Any other meaningful extracurricular activities or experiences.
 
-### License
+## License
 
 Format is MIT but all the data is owned by Wilmer Gonzalez. 
