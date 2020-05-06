@@ -142,5 +142,5 @@ Format is MIT but all the data is owned by Wilmer Gonzalez.
 
 ## Acknowledgments
 
-* To @sb2nov for the initial code!
+* To [@sb2nov](https://github.com/sb2nov/) for the initial code!
 * And to others contributors listed [here](https://github.com/sb2nov/resume/graphs/contributors)
