@@ -1,22 +1,23 @@
 %-------------------------
 % Resume in Latex
-% Author : Sourabh Bajaj
+% Author : Sourabh Bajaj, Sandeepan Sengupta
 % License : MIT
 %------------------------
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[a4paper, 12pt]{article}
 
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
 \usepackage[english]{babel}
+\usepackage[backend= biber, style= ieee]{biblatex} %https://www.overleaf.com/learn/latex/biblatex_citation_styles
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[empty]{fullpage}
+\usepackage[hidelinks]{hyperref}
+\usepackage{latexsym}
+\usepackage{marvosym}
 \usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{verbatim}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -44,6 +45,7 @@
 
 %-------------------------
 % Custom commands
+%-------------------------
 \newcommand{\resumeItem}[2]{
   \item\small{
     \textbf{#1}{: #2 \vspace{-2pt}}
@@ -72,6 +74,20 @@
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------
+
+
+%-------------------------
+% Custom biber commands
+%-------------------------
+
+% https://latex.org/forum/viewtopic.php?t=26618
+\addbibresource{example.bib}
+
+% Uncomment following line to mute indexing
+\DeclareFieldFormat{labelnumberwidth}{}
+\setlength{\biblabelsep}{0pt}
 
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -192,6 +208,12 @@
 %      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
 %    }
 %  \resumeSubHeadingListEnd
+
+
+%--------PUBLICATIONS------------
+\printbibliography[title=Conference Proceedings, heading=bibintoc, type=inproceedings]
+\printbibliography[title=Peer-reviewed Posters and Presentations, heading=bibintoc, type=booklet]
+\nocite{*}
 
 
 %-------------------------------------------
