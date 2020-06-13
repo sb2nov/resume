@@ -58,12 +58,11 @@
   }
 }
 
-\newcommand{\resumeSubheading}[4]{
+\newcommand{\resumeSubheading}[2]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
+    \end{tabular*}
 }
 
 \newcommand{\resumeSubtitle}[2]{
@@ -101,6 +100,7 @@
 
     \resumeSubheading
       {New Relic}{Portland, OR}
+    \resumeSubtitle
       {Senior Software Engineer - Database Engineering}{May 2018 - Present}
       \resumeItemListStart
         \resumeItem{Databases in Containers}
@@ -111,6 +111,8 @@
           {Integrated dm-crypt into our database deployment pipeline so that all database volumes were automatically encrypted.}
         \resumeItem{FedRAMP Certification}
           {Worked with our Security team bring our database deployments into FedRAMP Moderate compliance.}
+         \resumeItem{MySQL Sharding}
+          {Deployed Vitess to transparently shard our largest MySQL database.}
         \resumeItem{Other Achievements}
           {
             \begin{itemize}[noitemsep]
@@ -125,15 +127,15 @@
       {Technical Product Manager - Database Engineering}{Nov 2018 - Present}
       \resumeItemListStart
          \resumeItem{Migration to the Cloud}
-          {Engaged with management and architecture teams to plan out the Database Team's role in New Relic's cloud migration. I worked with my co-workers to ensure that we were all aligned on our strategy.}
+          {Engaged with management and architecture teams to plan out the Database Team's role in New Relic's cloud migration.}
         \resumeItem{Team Quarterly Planning}
           {Worked with stakeholders and multiple management levels to plan and prioritize the Database Team's quarterly schedule.}
-        \resumeItem{Team Communications}
-          {Wrote weekly, monthly, and quarterly status updates from information sourced from my co-workers to update the whole Site Engineering organization on our progress.}
       \resumeItemListEnd
 
+    \vspace{15pt}
     \resumeSubheading
       {Yelp}{San Francisco, CA}
+    \resumeSubtitle
       {Data Reliability Engineer}{May 2016 - December 2017}
       \resumeItemListStart
         \resumeItem{MySQL Database Server Auto Scaling}
@@ -141,7 +143,7 @@
         \resumeItem{PostgreSQL Optimization}
           {Responsible for optimizing multiple PostgreSQL database clusters for better performance, which reduced the number AWS instances resulting in a substantial cost savings.}
         \resumeItem{Operational Maintainability}
-          {Migrated all of the DRE team's SignalFX charts and detectors from manually created dashboards to use SignalForm, thereby moving all the definitions into version controlled code. Reducing mistakes and increasing maintainability and reducing variance.}
+          {Migrated all of the DRE team's SignalFX charts and detectors from manually created dashboards to use SignalForm to support our "Alerts as Code" initiative.}
         \resumeItem{MySQL Specific AMI}
           {Reduced production database deployment time by 75\% by rewriting the bootstrapping process using Packer to build custom baked MySQL images.}
         \resumeItem{Other Achievements}
@@ -155,8 +157,10 @@
           }
       \resumeItemListEnd
 
+    \vspace{15pt}
     \resumeSubheading
       {Pandora Media, Inc}{Oakland, CA}
+    \resumeSubtitle
       {Database Administrator}{May 2013 - April 2016}
       \resumeItemListStart
         \resumeItem{PostgreSQL Automated Backup Testing}
@@ -174,8 +178,10 @@
           }
       \resumeItemListEnd
 
+    \vspace{15pt}
     \resumeSubheading
       {Rentrak}{Portland, OR}
+    \resumeSubtitle
       {Database Administrator}{August 2011 - May 2013}
         \begin{itemize}[noitemsep]
         \item Decreased PostgreSQL backup time by a factor of ten.
@@ -184,8 +190,10 @@
         \item Developed and delivered internal auditing tools that decreased the DBA workload.
         \end{itemize}
 
+    \vspace{15pt}
     \resumeSubheading
       {Elemental Technologies}{Portland, OR}
+    \resumeSubtitle
       {Software Test Engineer (Contract)}{January 2011 - June 2011}
         \begin{itemize}[noitemsep]
         \item Worked on testing Elemental's two main products for compliance to many different video standards. Daily tasks included encoding and watching different video files, as well as watching live video. I was also responsible for the performance testing on Elemental's major releases.
@@ -198,7 +206,7 @@
 \section{Conference Presentations}
   \resumeSubHeadingListStart
     \resumeSubItem{App Sharded Redis w/Sentinel vs Redis Cluster - RedisConf19}
-      {Presented with my coworker Cory Johann about our journey of scaling Redis and our use of many different sharding technologies.}
+      {Presented with my coworker Cory Johannsen about our journey of scaling Redis and our use of many Redis sharding technologies.}
     \resumeSubItem{PostgreSQL to MySQL: A DBA Perspective - Percona Live 2017}
       {My retrospective after one year of transitioning from a PostgreSQL DBA to a MySQL DBA.}
     \resumeSubItem{Using pg\_repack to Bulk Delete Data - Postgres Vision 2016}
@@ -210,7 +218,7 @@
 \section{Technical Skills}
   \resumeSubHeadingListStart
     \resumeSubItem{Technologies}
-      {PostgreSQL, MySQL, Docker, Kubernetes, Puppet, AWS, Terraform, Ignition, Vault, New Relic, SignalFX, Splunk, VividCortex}
+      {PostgreSQL, MySQL, Redis, Vitess, Docker, Kubernetes, Puppet, AWS, Terraform, Ignition, Vault, New Relic, SignalFX, Splunk, VividCortex}
     \resumeSubItem{Languages}
       {Golang, Python, SQL, Bash}
   \resumeSubHeadingListEnd
