@@ -86,9 +86,10 @@
 % COLOR THEMES SELECTION
 
 % For Light theme un-comment this and comment the Dark theme section below
+\colorlet{textcolor}{black}
 \colorlet{urlcolor}{blue}
-\newcommand{\otherThemeRef}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_dark.pdf}{Get dark theme}}
-\newcommand{\latestVersion}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_light.pdf}{Get latest version \faicon{refresh}}}
+\newcommand{\otherThemeRef}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_dark.pdf}{ Dark \color{urlcolor}{\faicon{lightbulb-o}}}}
+\newcommand{\latestVersion}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_light.pdf}{Latest \color{urlcolor}{\faicon{refresh}}}}
 
 \begin{document}
 % ---
@@ -98,8 +99,8 @@
 % \colorlet{backgroundcolor}{black!30!gray}
 % \colorlet{urlcolor}{blue!25!white}
 % \AtBeginDocument{\color{textcolor}}
-% \newcommand{\otherThemeRef}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_light.pdf}{Get light theme}}
-% \newcommand{\latestVersion}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_dark.pdf}{Get latest version \faicon{refresh}}}
+% \newcommand{\otherThemeRef}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_light.pdf}{Light \color{urlcolor}{\faicon{lightbulb-o}}}}
+% \newcommand{\latestVersion}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_dark.pdf}{Latest \color{urlcolor}{\faicon{refresh}}}}
 
 % \begin{document}
 % \pagecolor{backgroundcolor}
@@ -107,9 +108,10 @@
 
 % HEADING
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{https://linktr.ee/wilmerags}{\Large Wilmer A. Gonzalez S.}} &  \href{https://github.com/wilmeragsgh}{ \faicon{github} \color{urlcolor} wilmeragsgh} \\
-  \href{mailto:wilmeragsgm@gmail.com}{wilmeragsgm@gmail.com} &  \faicon{code} Python, R\\
-  \textsl{\small \latestVersion} & \textsl{\small \otherThemeRef}
+  \textbf{\Large Wilmer A. Gonzalez S.} \href{https://linktr.ee/wilmerags}{\color{urlcolor} \faicon{link}}\\
+  Machine Learning Engineer & \href{mailto:wilmeragsgm@gmail.com}{\color{urlcolor}{\faicon{envelope}} \color{textcolor} wilmeragsgm} \\
+  \textsl{Caracas, Venezuela.} & \href{https://www.linkedin.com/in/wilmeragslin/}{ \color{urlcolor}{\faicon{linkedin}} \color{textcolor} wilmeragslin} \\
+  \textsl{\small \latestVersion} /\textsl{\small \otherThemeRef} & \href{https://github.com/wilmeragsgh}{  \color{urlcolor}{\faicon{github}} \color{textcolor} wilmeragsgh}\\
 \end{tabular*}
 % ---
 
@@ -117,20 +119,42 @@
 \section{Experience}
   \resumeSubHeadingListStart
     \resumeSubheading
+      {Quash.ai}{(remote) Caracas, VE}
+      {Machine Learning Engineer}{March 2021 - Present}
+      \resumeItemListStart
+      \resumeItem{Build a new version of a scoring API as part of the core component of the product with dynamic feature processing pipelines.}
+      \resumeItem{Build a AutoML service for the modeling need of the product.}
+      \resumeItem{Assist customer success needs from data science.}
+      \resumeItem{Design ML workflow for new customers processing pipelines.}
+      \resumeItemListEnd
+      \resumeTech{Technologies}{Python, R, AWS, Sagemaker, REST APIs.}\\
+      \resumeTech{Theory}{Machine learning, AutoML, Feature engineering, Project management.}
+      
+    \resumeSubheading
+      {Omdena}{(remote) Caracas, VE}
+      {Lead Machine Learning Engineer}{Jan 2021 - Apr 2021}
+      \resumeItemListStart
+      \resumeItem{Build a model that attaches a trust score to online news articles and claims and identifies related articles with opposing stances.}
+      \resumeItem{Specifically worked on claim detection models through reviewal of active research and their implementation.}
+      \resumeItem{Contributed to open-source projects related to the area of research.}
+      \resumeItemListEnd
+      \resumeTech{Technologies}{Python, Keras, Tensorflow, Falcon, REST APIs.}\\
+      \resumeTech{Theory}{NLP, Deep Learning, Web development.}
+      
+    \resumeSubheading
       {UNDP (ONU)}{Caracas, VE}
       {Data Science Consultant}{August 2019 - Present}
       \resumeItemListStart
-      \resumeItem{
-      Designed and develop workflows for topic modeling and community detection to analyze hundred-thousand-scale text and network data.}
+      \resumeItem{Processed roughly 1.1M tweets with tasks such as Topic Modeling to provide informative summaries related to opinions and trends.}
+      \resumeItem{Processed 150k user data with tasks such as Community detection and Network analysis to detect key actors and information hubs.}
       \resumeItem{Sped up the analytical workflow by 75\% by redesigning the sampling strategy for jobs.}
-      \resumeItem{Generated CLI tool for automation of predefined analysis workflows.}
       \resumeItemListEnd
-      \resumeTech{Technologies}{Python, R, Bash, Gephi and Power BI.}\\
-      \resumeTech{Theory}{Topic modeling, Community detection, Network Analysis and NLP.}
+      \resumeTech{Technologies}{Python, R, Bash, Gephi, Power BI, REST APIs, Airflow.}\\
+      \resumeTech{Theory}{Topic modeling, Community detection, Network Analysis and NLP, Data visualization, Data engineering}
 
 \resumeSubheading
       {Universidad Central de Venezuela}{Caracas, VE}
-      {Advanced topics in AI(Adjunct Professor)}{October 2018 - Present}
+      {Advanced topics in AI (Adjunct Professor)}{October 2018 - Present}
       \resumeItemListStart
       \resumeItem{Designed and organized course material and resources for topics described in \href{https://bit.ly/2VYchte}{here}.}
       \resumeItem{Lectured material for students and grade their assignments.}
@@ -146,6 +170,7 @@
       \resumeTech{Technologies}{Python, Latex, R, Weka, Colab, Jupyter and swirl.}\\
       \resumeTech{Theory}{Artificial intelligence, Data science and Data mining.}
 
+\newpage
 \resumeSubheading
       {Oliver Wyman/Bairesdev}{(remote) Caracas, VE}
       {Data engineer}{July 2020 - November 2020}
@@ -231,7 +256,7 @@
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 % ---
-
+\vspace{1em}
 \hfill \textsl{ \faicon{link}Following sections items are clickable for references.}
 
 % CERTIFICATIONS
@@ -273,8 +298,8 @@
   \resumeSubHeadingListEnd
 % ---
 
-\newpage
-
+%\newpage
+\vspace{1em}
 % PROJECTS
 \section{Personal Projects}
 
@@ -291,6 +316,8 @@
     
   \resumeSubHeadingListEnd
 % ---
+
+\vspace{1em}
 
 % PERSONAL PUBLICATIONS
 \section{Personal publications}
