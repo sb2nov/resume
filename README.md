@@ -7,7 +7,7 @@ A latex template for CVs considering tips from [Create Your Resume for Google: T
 
 ### Locally
 
-**Docker:** 
+**Docker:**
 
 * Linux: `curl -sSL https://get.docker.com/ | sh`
 
@@ -60,10 +60,10 @@ A single-page, one-column resume for software developers (data scientist use cas
 
 **Content:**
 * Include your contact information and email at the top.
-* Don't have to include objetive statements.
+* Don't have to include objective statements.
 * Don't need to include references.
 
-**Lenght:**
+**Length:**
 * Keep to one page for business and internship roles, and no longer than two pages for engineering and technical roles.
 * Include what's relevant for the specific role.
 * Use bullet points with consistent formatting and structure rather than long paragraphs.
@@ -86,7 +86,7 @@ A single-page, one-column resume for software developers (data scientist use cas
 
 #### Education
 
-* Include all post-secondary institutions you've attended, and all degress and majors.
+* Include all post-secondary institutions you've attended, and all degrees and majors.
 * Be sure your most recent education is listed first.
 * Include your actual graduation date in the month-year format (for example May 2017 not Spring 2017).
 
@@ -100,7 +100,7 @@ A single-page, one-column resume for software developers (data scientist use cas
 * Include your employer, position, and dates employed for all jobs and internships in the month-year format.
 * Bullet point descriptions should be concise and clear.
 * Streamline bullet points that spill over onto the next line by only 1-2 words.
-* Use action words like createdm designated, debugged, negotiated, developed, managed, etc.
+* Use action words like created, designated, debugged, negotiated, developed, managed, etc.
 * List metrics and examples.
 * Use data and comparisons or average to provide context.
 
@@ -116,7 +116,7 @@ A single-page, one-column resume for software developers (data scientist use cas
 * Grew revenue from 15 small and medium business clients by 10% QoQ by mapping new software features as solutions to their business goals.
 
 
-#### Leadership and awards 
+#### Leadership and awards
 
 Also use the **Framework for impact based descriptions**. Examples:
 
@@ -126,7 +126,7 @@ Also use the **Framework for impact based descriptions**. Examples:
 
 Also use the **Framework for impact based descriptions**.
 
-* Include involvment in student groups especially if you have leadership position.
+* Include involvement in student groups especially if you have leadership position.
 
 Some ideas:
 
@@ -138,7 +138,7 @@ Some ideas:
 
 ## License
 
-Format is MIT but all the data is owned by Wilmer Gonzalez. 
+Format is MIT but all the data is owned by Wilmer Gonzalez.
 
 ## Acknowledgments
 
