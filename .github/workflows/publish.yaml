@@ -18,7 +18,7 @@ jobs:
           args: '-pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build'
       - name: Validate
         run: |
-          file resume.pdf | grep -q ' PDF '
+          file ./build/resume.pdf | grep -q ' PDF '
       - name: Upload
         uses: peaceiris/actions-gh-pages@v3
         with:
