@@ -22,7 +22,7 @@ jobs:
       - name: Upload
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: $${ secrets.DEPLOY_KEY }}
+          deploy_key: ${{ secrets.DEPLOY_KEY }}
           publish_dir: ./build
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
