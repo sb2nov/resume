@@ -51,7 +51,7 @@
 %-------------------------
 
 % Environments in which to lay out contents
-\newenvironment{resumeSubHeadingList}{\begin{itemize}[leftmargin=*]}{\end{itemize}}
+\newenvironment{resumeHeadingList}{\begin{itemize}[leftmargin=*]}{\end{itemize}}
 \newenvironment{resumeItemList}{\begin{itemize}}{\end{itemize}\vspace{-5pt}}
 \newenvironment{resumeTable}{\tabularx{\textwidth}{l@{\hskip 0.2in}X}}{\endtabularx}
 
@@ -69,16 +69,8 @@
   }
 }
 
-% A header line outside of a list
+% Top-level heading (e.g. one job in a job list)
 \newcommand{\resumeHeading}[4]{
-    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
-}
-
-% A header line within a list
-\newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
@@ -86,8 +78,8 @@
     \end{tabular*}\vspace{-5pt}
 }
 
-% A second-level nested header (e.g. a role w/in an employment)
-\newcommand{\resumeSubSubheading}[2]{
+% Continutation heading (e.g. a second role w/in a job)
+\newcommand{\resumeSubheading}[2]{
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textit{\small#1} & \textit{\small #2} \\
     \end{tabular*}\vspace{-5pt}
@@ -97,8 +89,6 @@
 \newcommand{\resumeTableItem}[2]{\textbf{#1} & #2\\}
 
 %-------------------------------------------
-%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \begin{document}
 
@@ -114,22 +104,22 @@
 
 %-----------EDUCATION-----------------
 \section{Education}
-  \begin{resumeSubHeadingList}
-    \resumeSubheading
+  \begin{resumeHeadingList}
+    \resumeHeading
       {Case Western Reserve University}{Cleveland, OH}
       {B.S. in Computer Science, summa cum laude;  GPA: 3.945}{Aug 2014 - May 2018}
       \begin{resumeItemList}
         \resumeItem{Groups}{ACM, Tau Beta Pi Engineering Honor Society}
         \resumeItem{Awards}{National Merit Scholar, Andrew R. Jennings Award for Excellence in Computer Science}
       \end{resumeItemList}
-  \end{resumeSubHeadingList}
+  \end{resumeHeadingList}
 
 
 %-----------EXPERIENCE-----------------
 \section{Experience}
-  \begin{resumeSubHeadingList}
+  \begin{resumeHeadingList}
 
-    \resumeSubheading
+    \resumeHeading
       {Niche}{Pittsburgh, PA}
       {Staff Software Engineer, Back End}{Jul 2022 - Present}
       \begin{resumeItemList}
@@ -142,7 +132,7 @@
         \end{resumeItemList}
         \resumeItem{Culture of Quality}{I have been a big advocate as a staff-level engineer for building a "Culture of Quality". Building a high-quality product is \textit{not} just the job of QA Engineers -- developing software is a team sport, and I think it's crucial for developers to help in reviewing and creating test plans, updating failing automated tests, and generally helping to shift testing left in the SDLC wherever possible.}
       \end{resumeItemList}
-      \resumeSubSubheading
+      \resumeSubheading
         {Senior Software Engineer, Back End}{Jul 2021 - Jul 2022}
         \begin{resumeItemList}
           \resumeItem{Tech Lead}{Served as Tech Lead on our partner fulfillment product team. Worked with product owner, UX designer, and engineers to guide technical feasiblity discussions, break epics into well-scoped user stories, advocate for resolving tech debt, and act as the technical liaison to other teams that needed input on our subject area.}
@@ -151,43 +141,41 @@
           \resumeItem{pgsql}{Library for Niche services to use to interact with Postgres databases, instead of each service duplicating boilerplate DB code. I developed and rolled this out to all services in in order to standardize setup/teardown operations, enforce a consistent approach to automatic schema migrations, and enable configurability from environment variables for connection pool parameters.}
           \resumeItem{Observability}{As Tech Lead, I pushed the team to take ownership over monitoring the health of our own production system instead of relying on SREs to do this work. This involved restructuring our logs to aggregate more usefully, building out monitoring searches and dashboards in SumoLogic, and encouraging a culture of ownership on the team.}
         \end{resumeItemList}
-      \resumeSubSubheading
+      \resumeSubheading
         {Software Engineer, Back End}{Mar 2020 - Jul 2021}
         \begin{resumeItemList}
           \resumeItem{Compare tool}{Tool to help prospective students directly compare college or K12 schools by the facts they most care about on \href{https://niche.com/colleges/compare}{https://niche.com/colleges/compare.}}
           \resumeItem{Dynamic search}{Enhanced the \href{https://www.niche.com/colleges/search/college-quiz/}{search tool} to allow school searchers to order results on the search page by weighting the factors they care most about (e.g. academics, safety, etc...). Implemented via a custom Elasticsearch index and Painless script.}
           \resumeItem{Lead fulfillment migration}{When we got news that the third party lead delivery platform we used to send data to partners was being sunset by its vendor, I worked on tight timelines to build out an in-house lead delivery system to replace it (with far lower operating costs, to boot). I then led a mass migration to seamlessly transition all of our fulfillment campaigns to use the in-house system without sacrificing any business-critical data throughput.}
-          \end{resumeItemList}
+        \end{resumeItemList}
         
-      \resumeSubheading
+      \resumeHeading
       {Epic Systems}{Madison, WI}
       {Software Developer}{Jul 2018 - Dec 2019}
       \begin{resumeItemList}
-        \resumeItem{Immunization Scheduling}
-        {Module owner for a patient safety critical implementation of the CDC \href{https://www.cdc.gov/vaccines/programs/iis/cdsi.html}{CDSi} vaccine schedule guidelines. Worked with physician stakeholders to implement accurate vaccine dose forecasting system scaled to millions of Epic patients.}
-        \resumeItem{SYSVAK}
-          {Outpatient development lead for integration with Norwegian national vaccine registry.}
+        \resumeItem{Immunization Scheduling}{Module owner for a patient safety critical implementation of the CDC \href{https://www.cdc.gov/vaccines/programs/iis/cdsi.html}{CDSi} vaccine schedule guidelines. Worked with physician stakeholders to implement accurate vaccine dose forecasting system scaled to millions of Epic patients.}
+        \resumeItem{SYSVAK}{Outpatient development lead for integration with Norwegian national vaccine registry.}
       \end{resumeItemList}
     
-    \resumeSubheading
+    \resumeHeading
       {Viavi Solutions, Inc}{Germantown, MD}
       {Software Engineering Co-op}{Jan 2017 - Aug 2017}
       \begin{resumeItemList}
-      \resumeLine{Developed Python test aggregation tools for the \href{https://www.viavisolutions.com/en-us/product-family/oneexpert-onx}{ONX} embedded device based on customer-specific JSON manifests.}
+        \resumeLine{Developed Python test aggregation tools for the \href{https://www.viavisolutions.com/en-us/product-family/oneexpert-onx}{ONX} embedded device based on customer-specific JSON manifests.}
       \end{resumeItemList}
     
-    \resumeSubheading
+    \resumeHeading
       {Case Western Reserve University}{Cleveland, OH}
       {Software Craftsmanship Teaching Assistant}{Aug 2017 - Dec 2017}
       \begin{resumeItemList}
         \resumeLine{Led weekly discussion sessions and code reviews to teach techniques for writing and maintainable readable Java programs.}
       \end{resumeItemList}
-      \resumeSubSubheading
+      \resumeSubheading
         {Intro to Data Structures Supplemental Instructor}{Aug 2016 - Dec 2016}
         \begin{resumeItemList}
-        \resumeLine{Used the \href{https://info.umkc.edu/si/}{SI} framework to encourage collaborative learning in a positive environment on topics like lists, graphs, and trees.}
+          \resumeLine{Used the \href{https://info.umkc.edu/si/}{SI} framework to encourage collaborative learning in a positive environment on topics like lists, graphs, and trees.}
         \end{resumeItemList}
-  \end{resumeSubHeadingList}
+  \end{resumeHeadingList}
 
 
 % --------PROGRAMMING SKILLS------------
