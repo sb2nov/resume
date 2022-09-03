@@ -1,0 +1,214 @@
+%-------------------------
+% Resume
+% Author : Brian Clark
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[empty]{fullpage} % use 1in margins
+\usepackage{titlesec}        % fancy section headings
+\usepackage{enumitem}        % customize enumerate, itemize, and description
+\usepackage{hyperref}        % produce and customize hypertext links
+\usepackage{tabularx}        % add tabular envs with text wrap
+
+%-------------------------
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+
+% Make the space used on each page correspond to the content
+\raggedbottom
+\raggedright
+
+% Configure hyperlink styles
+\hypersetup{
+  colorlinks   = true, % Colours links instead of ugly boxes
+  urlcolor     = blue, % Colour for external hyperlinks
+  linkcolor    = blue, % Colour of internal links
+  citecolor    = red   % Colour of citations
+}
+
+% By default, don't add padding to tables
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Use lil' circles for list items
+\renewcommand{\labelitemii}{$\circ$}
+
+%-------------------------
+
+% Environments in which to lay out contents
+\newenvironment{resumeSubHeadingList}{\begin{itemize}[leftmargin=*]}{\end{itemize}}
+\newenvironment{resumeItemList}{\begin{itemize}}{\end{itemize}\vspace{-5pt}}
+\newenvironment{resumeTable}{\tabularx{\textwidth}{l@{\hskip 0.2in}X}}{\endtabularx}
+
+% Titled item within a resume list
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Untitled item within a resume list
+\newcommand{\resumeLine}[1]{
+  \item\small{
+    #1 \vspace{-2pt}
+  }
+}
+
+% A header line outside of a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+% A header line within a list
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+% A second-level nested header (e.g. a role w/in an employment)
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+% One item w/in an aligned table
+\newcommand{\resumeTableItem}[2]{\textbf{#1} & #2\\}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{center}
+	\Large{\textbf{Brian Clark}}
+\end{center}
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \href{https://github.com/bclarkx2}{https://github.com/bclarkx2} & \href{mailto:bclarkx2@gmail.com}{bclarkx2@gmail.com} \\
+  \href{https://linkedin.com/in/bclarkx2}{https://linkedin.com/in/bclarkx2} & \href{tel:+17036159884}{+17036159884} \\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \begin{resumeSubHeadingList}
+    \resumeSubheading
+      {Case Western Reserve University}{Cleveland, OH}
+      {B.S. in Computer Science, summa cum laude;  GPA: 3.945}{Aug 2014 - May 2018}
+      \begin{resumeItemList}
+        \resumeItem{Groups}{ACM, Tau Beta Pi Engineering Honor Society}
+        \resumeItem{Awards}{National Merit Scholar, Andrew R. Jennings Award for Excellence in Computer Science}
+      \end{resumeItemList}
+  \end{resumeSubHeadingList}
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \begin{resumeSubHeadingList}
+
+    \resumeSubheading
+      {Niche}{Pittsburgh, PA}
+      {Staff Software Engineer, Back End}{Jul 2022 - Present}
+      \begin{resumeItemList}
+        \resumeItem{Leadership}{As a staff engineer, I help guide the technical operations of a whole ``pod" containing multiple product teams. I help identify dependencies between teams, guide architectural discussions, and help influence engineering staffing on teams, in addition to making direct technical contributions.}
+        \resumeItem{Knowledge sharing}{I take a lot of pride in helping my colleages share things they know with others!}
+        \begin{resumeItemList}
+          \resumeItem{Learn Over Lunch}{I have been coordinating a weekly session where colleagues from across the whole company volunteer to give a 30 minute presentation on an interesting topic. It's a great way to learn new things and build a culture of curiosity!}
+          \resumeItem{Mentorship}{I have served as an onboarding buddy and mentor for several new engineers joining the company, as well as for colleagues in other functions looking to expand their skillset to back end engineering.}
+          \resumeItem{Go Puzzle}{I instituted a weekly golang challenge to help BE engineers explore new details about the Go programming language (as well as use \href{https://psychology.ucsd.edu/undergraduate-program/undergraduate-resources/academic-writing-resources/effective-studying/retrieval-practice.html}{retrieval practice} to keep their existing Go skills sharp!).}
+        \end{resumeItemList}
+        \resumeItem{Culture of Quality}{I have been a big advocate as a staff-level engineer for building a "Culture of Quality". Building a high-quality product is \textit{not} just the job of QA Engineers -- developing software is a team sport, and I think it's crucial for developers to help in reviewing and creating test plans, updating failing automated tests, and generally helping to shift testing left in the SDLC wherever possible.}
+      \end{resumeItemList}
+      \resumeSubSubheading
+        {Senior Software Engineer, Back End}{Jul 2021 - Jul 2022}
+        \begin{resumeItemList}
+          \resumeItem{Tech Lead}{Served as Tech Lead on our partner fulfillment product team. Worked with product owner, UX designer, and engineers to guide technical feasiblity discussions, break epics into well-scoped user stories, advocate for resolving tech debt, and act as the technical liaison to other teams that needed input on our subject area.}
+          \resumeItem{Batch delivery}{Batch system for storing and delivering leads on a schedule. This project required incorporating cron-like event scheduling into a real-time golang REST microservice architecture.}
+          \resumeItem{Salesforce integration}{Reliable, two-way integration bewteen production BE microservices and the company Salesforce org to help Sales and Product teams work more efficiently by ensuring everyone is working from data that agree with each other.}
+          \resumeItem{pgsql}{Library for Niche services to use to interact with Postgres databases, instead of each service duplicating boilerplate DB code. I developed and rolled this out to all services in in order to standardize setup/teardown operations, enforce a consistent approach to automatic schema migrations, and enable configurability from environment variables for connection pool parameters.}
+          \resumeItem{Observability}{As Tech Lead, I pushed the team to take ownership over monitoring the health of our own production system instead of relying on SREs to do this work. This involved restructuring our logs to aggregate more usefully, building out monitoring searches and dashboards in SumoLogic, and encouraging a culture of ownership on the team.}
+        \end{resumeItemList}
+      \resumeSubSubheading
+        {Software Engineer, Back End}{Mar 2020 - Jul 2021}
+        \begin{resumeItemList}
+          \resumeItem{Compare tool}{Tool to help prospective students directly compare college or K12 schools by the facts they most care about on \href{https://niche.com/colleges/compare}{https://niche.com/colleges/compare.}}
+          \resumeItem{Dynamic search}{Enhanced the \href{https://www.niche.com/colleges/search/college-quiz/}{search tool} to allow school searchers to order results on the search page by weighting the factors they care most about (e.g. academics, safety, etc...). Implemented via a custom Elasticsearch index and Painless script.}
+          \resumeItem{Lead fulfillment migration}{When we got news that the third party lead delivery platform we used to send data to partners was being sunset by its vendor, I worked on tight timelines to build out an in-house lead delivery system to replace it (with far lower operating costs, to boot). I then led a mass migration to seamlessly transition all of our fulfillment campaigns to use the in-house system without sacrificing any business-critical data throughput.}
+          \end{resumeItemList}
+        
+      \resumeSubheading
+      {Epic Systems}{Madison, WI}
+      {Software Developer}{Jul 2018 - Dec 2019}
+      \begin{resumeItemList}
+        \resumeItem{Immunization Scheduling}
+        {Module owner for a patient safety critical implementation of the CDC \href{https://www.cdc.gov/vaccines/programs/iis/cdsi.html}{CDSi} vaccine schedule guidelines. Worked with physician stakeholders to implement accurate vaccine dose forecasting system scaled to millions of Epic patients.}
+        \resumeItem{SYSVAK}
+          {Outpatient development lead for integration with Norwegian national vaccine registry.}
+      \end{resumeItemList}
+    
+    \resumeSubheading
+      {Viavi Solutions, Inc}{Germantown, MD}
+      {Software Engineering Co-op}{Jan 2017 - Aug 2017}
+      \begin{resumeItemList}
+      \resumeLine{Developed Python test aggregation tools for the \href{https://www.viavisolutions.com/en-us/product-family/oneexpert-onx}{ONX} embedded device based on customer-specific JSON manifests.}
+      \end{resumeItemList}
+    
+    \resumeSubheading
+      {Case Western Reserve University}{Cleveland, OH}
+      {Software Craftsmanship Teaching Assistant}{Aug 2017 - Dec 2017}
+      \begin{resumeItemList}
+        \resumeLine{Led weekly discussion sessions and code reviews to teach techniques for writing and maintainable readable Java programs.}
+      \end{resumeItemList}
+      \resumeSubSubheading
+        {Intro to Data Structures Supplemental Instructor}{Aug 2016 - Dec 2016}
+        \begin{resumeItemList}
+        \resumeLine{Used the \href{https://info.umkc.edu/si/}{SI} framework to encourage collaborative learning in a positive environment on topics like lists, graphs, and trees.}
+        \end{resumeItemList}
+  \end{resumeSubHeadingList}
+
+
+% --------PROGRAMMING SKILLS------------
+\section{Skills}
+  \begin{resumeTable}
+    \resumeTableItem{Languages}{golang, sql, python, bash, java}
+    \resumeTableItem{Technologies}{docker, postgres, git, kafka, linux, aws, elasticsearch, openapi, oauth, salesforce}
+    \resumeTableItem{Concepts}{REST, microservices, unit testing, agile, structured logging, integration tests, concurrency, load testing}
+  \end{resumeTable}
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \begin{resumeTable}
+    \resumeTableItem{\href{https://github.com/bclarkx2/count}{count}}{NLP library and CLI for counting words, sentences, and paragraphs.}
+    \resumeTableItem{\href{https://github.com/bclarkx2/babble}{babble}}{Generative Adversarial Network approach to grammar emulation.}
+    \resumeTableItem{\href{https://github.com/bclarkx2/ubuntu-setup}{ubuntu-setup}}{Provisioning script to configure a fresh Debian-family Linux install.}
+    \resumeTableItem{\href{https://github.com/bclarkx2/goto}{goto}}{Python utility for bookmarking file system locations and quickly navigating among them.}
+    \resumeTableItem{\href{https://github.com/bclarkx2/dotfiles}{dotfiles}}{Linux dotfiles and other customizations.}
+  \end{resumeTable}
+
+
+%-------------------------------------------
+\end{document}
