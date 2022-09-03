@@ -1,0 +1,27 @@
+name: publish-resume
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: resume.tex
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-dir=build
+      - name: Validate
+        run: |
+          file resume.pdf | grep -q ' PDF '
+      - name: Upload
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: $${ secrets.DEPLOY_KEY }}
+          publish_dir: ./build
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
