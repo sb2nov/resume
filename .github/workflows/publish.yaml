@@ -15,7 +15,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: resume.tex
-          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-dir=build
+          args: '-pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-dir=build'
       - name: Validate
         run: |
           file resume.pdf | grep -q ' PDF '
