@@ -21,13 +21,13 @@ jobs:
       - name: Install pdftoppm 
         run: sudo apt-get update && sudo apt-get install -y poppler-utils
 
-      # # Build latex source into a PDF
-      # - name: Compile PDF
-      #   uses: xu-cheng/latex-action@v2
-      #   with:
-      #     root_file: resume.tex
-      #     args: '-pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build'
-      #     post_compile: 'latexmk -c -output-directory=build'
+      # Build latex source into a PDF
+      - name: Compile PDF
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: resume.tex
+          args: '-pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build'
+          post_compile: 'latexmk -c -output-directory=build'
  
         # - name: Compile PDF manual
       #   run: |
