@@ -20,7 +20,7 @@ jobs:
       # Install pdf->png tool first before even trying to compile PDF
       - name: Install pdftoppm 
         run: |
-          sudo apt-get install -y pdftoppm
+          sudo apt-get install -y poppler-utils
 
       # Build latex source into a PDF
       - name: Compile PDF
