@@ -46,6 +46,7 @@ jobs:
 
       - name: test writing file
         run: |
+          mkdir -p build
           cd build
           echo "test" >> test.png
 
