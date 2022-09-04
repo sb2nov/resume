@@ -19,19 +19,19 @@ jobs:
 
       # Install pdf->png tool first before even trying to compile PDF
       - name: Install pdftoppm 
-        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils texlive latexmk
 
-      # Build latex source into a PDF
-      - name: Compile PDF
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: resume.tex
-          args: '-pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build'
-          post_compile: 'latexmk -c -output-directory=build'
+      # # Build latex source into a PDF
+      # - name: Compile PDF
+      #   uses: xu-cheng/latex-action@v2
+      #   with:
+      #     root_file: resume.tex
+      #     args: '-pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build'
+      #     post_compile: 'latexmk -c -output-directory=build'
  
-        # - name: Compile PDF manual
-      #   run: |
-      #     latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build
+      - name: Compile PDF manually
+        run: |
+          latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build
 
       # Double check that we produced a valid PDF
       - name: Validate
