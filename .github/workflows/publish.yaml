@@ -34,6 +34,10 @@ jobs:
         run: |
           file ./build/resume.pdf | grep -q ' PDF '
 
+      # sleep
+      - name: sleep
+        run: sleep 10s
+
       # Convert each page of the PDF into a separate image
       - name: Generate Preview Images
         run: |
