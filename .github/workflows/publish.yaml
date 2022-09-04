@@ -34,9 +34,18 @@ jobs:
         run: |
           file ./build/resume.pdf | grep -q ' PDF '
 
+      - name: debug PDF
+        run: |
+          echo "ls build"
+          ls build
+          echo "file build/resume.pdf"
+          file build/resume.pdf
+          echo "cat build/resume.pdf"
+          cat build/resume.pdf
+
       # Convert each page of the PDF into a separate image
       - name: Generate Preview Images
-        run: pdftoppm -r 600 ./build/resume.pdf ./build/resume-preview -png
+        run: pdftocairo -r 600 ./build/resume.pdf ./build/resume-preview -png
 
       - name: check pdftoppm version
         run: pdftoppm -v
