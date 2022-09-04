@@ -28,20 +28,20 @@ jobs:
       #     root_file: resume.tex
       #     args: '-pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build'
       
-      # # Double check that we produced a valid PDF
-      # - name: Validate
-      #   run: |
-      #     file ./build/resume.pdf | grep -q ' PDF '
+      # Double check that we produced a valid PDF
+      - name: Validate
+        run: |
+          file ./build/resume.pdf | grep -q ' PDF '
 
-      # # Convert each page of the PDF into a separate image
-      # - name: Generate Preview Images
-      #   run: |
-      #     cd build
-      #     echo "in build"
-      #     ls .
-      #     echo "generating previews"
-      #     pdftoppm -r 600 resume.pdf resume-preview -png
-      #     ls .
+      # Convert each page of the PDF into a separate image
+      - name: Generate Preview Images
+        run: |
+          cd build
+          echo "in build"
+          ls .
+          echo "generating previews"
+          pdftoppm -r 600 resume.pdf resume-preview -png
+          ls .
 
       - name: test writing file
         run: |
