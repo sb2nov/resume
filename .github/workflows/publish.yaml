@@ -37,11 +37,15 @@ jobs:
       # Convert each page of the PDF into a separate image
       - name: Generate Preview Images
         run: |
+          cd build
+          echo "in build"
           ls .
-          ls build
-          (cd build && pdftoppm -r 600 resume.pdf resume-preview -png)
+          echo "generating previews"
+          pdftoppm -r 600 resume.pdf resume-preview -png
           ls .
-          ls build
+
+      - name: check pdftoppm version
+        run: pdftoppm -v
 
       # Clean generated files
       # - name: Compile PDF
