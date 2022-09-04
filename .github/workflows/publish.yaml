@@ -21,14 +21,18 @@ jobs:
       - name: Install pdftoppm 
         run: sudo apt-get update && sudo apt-get install -y poppler-utils
 
-      # Build latex source into a PDF
-      - name: Compile PDF
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: resume.tex
-          args: '-pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build'
-          post_compile: 'latexmk -c -output-directory=build'
-      
+      # # Build latex source into a PDF
+      # - name: Compile PDF
+      #   uses: xu-cheng/latex-action@v2
+      #   with:
+      #     root_file: resume.tex
+      #     args: '-pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build'
+      #     post_compile: 'latexmk -c -output-directory=build'
+ 
+        # - name: Compile PDF manual
+      #   run: |
+      #     latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build
+
       # Double check that we produced a valid PDF
       - name: Validate
         run: |
@@ -45,7 +49,9 @@ jobs:
 
       # Convert each page of the PDF into a separate image
       - name: Generate Preview Images
-        run: pdftocairo -r 600 ./build/resume.pdf ./build/resume-preview -png
+        run: |
+          cd build 
+          pdftocairo -r 600 resume.pdf resume-preview -png
 
       - name: check pdftoppm version
         run: pdftoppm -v
