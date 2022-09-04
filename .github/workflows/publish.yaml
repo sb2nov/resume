@@ -16,6 +16,9 @@ jobs:
         with:
           root_file: resume.tex
           args: '-pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build'
+      - name: Generate Preview
+        run: |
+          pdftoppm -r 600 resume.pdf resume-preview -png
       - name: Validate
         run: |
           file ./build/resume.pdf | grep -q ' PDF '
