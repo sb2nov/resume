@@ -43,6 +43,7 @@ jobs:
       - name: Compile PDF
         uses: xu-cheng/latex-action@v2
         with:
+          root_file: resume.tex
           args: '-output-directory=build -c'
 
       # Commit the generated resources to the gh-pages branch, which
