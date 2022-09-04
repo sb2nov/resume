@@ -24,5 +24,6 @@ jobs:
         with:
           deploy_key: ${{ secrets.DEPLOY_KEY }}
           publish_dir: ./build
+          exclude_assets: '.github,**.aux,**.fdb_latexmk,**.fls,**.log,**.out'
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
