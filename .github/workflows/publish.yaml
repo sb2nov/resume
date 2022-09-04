@@ -37,7 +37,7 @@ jobs:
       # Convert each page of the PDF into a separate image
       - name: Generate Preview Images
         run: |
-          pdftoppm -r 600 resume.pdf resume-preview -png
+          (cd build && pdftoppm -r 600 resume.pdf resume-preview -png)
 
       # Clean generated files
       - name: Compile PDF
