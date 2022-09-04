@@ -40,11 +40,11 @@ jobs:
           (cd build && pdftoppm -r 600 resume.pdf resume-preview -png)
 
       # Clean generated files
-      - name: Compile PDF
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: resume.tex
-          args: '-output-directory=build -c'
+      # - name: Compile PDF
+      #   uses: xu-cheng/latex-action@v2
+      #   with:
+      #     root_file: resume.tex
+      #     args: '-output-directory=build -c'
 
       # Commit the generated resources to the gh-pages branch, which
       # is automatically synced to the GH Pages site at 
