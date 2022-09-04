@@ -1,3 +1,4 @@
+# publish-resume sends the updated resume to GH Pages
 name: publish-resume
 
 # Run only when something gets merged to the default branch
@@ -13,7 +14,7 @@ jobs:
     steps:
 
       # Check out the code itself
-      - name: Set up Git repository
+      - name: Checkout
         uses: actions/checkout@v2
 
       # Install pdf->png tool first before even trying to compile PDF
@@ -38,6 +39,12 @@ jobs:
         run: |
           pdftoppm -r 600 resume.pdf resume-preview -png
 
+      # Clean generated files
+      - name: Compile PDF
+        uses: xu-cheng/latex-action@v2
+        with:
+          args: '-output-directory=build -c'
+
       # Commit the generated resources to the gh-pages branch, which
       # is automatically synced to the GH Pages site at 
       # bclarkx2.github.io/resume
@@ -46,7 +53,7 @@ jobs:
         with:
           deploy_key: ${{ secrets.DEPLOY_KEY }}
           publish_dir: ./build
-          exclude_assets: '.github,**.aux,**.fdb_latexmk,**.fls,**.log,**.out'
+          # exclude_assets: '.github,**.aux,**.fdb_latexmk,**.fls,**.log,**.out'
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
 
