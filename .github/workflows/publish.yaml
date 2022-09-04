@@ -53,6 +53,13 @@ jobs:
           cd build 
           pdftocairo -r 600 resume.pdf resume-preview -png
 
+      - name: check image output
+        run: |
+          echo "ls ."
+          ls .
+          echo "ls build"
+          ls build
+
       - name: check pdftoppm version
         run: pdftoppm -v
 
