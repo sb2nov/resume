@@ -1,4 +1,6 @@
 name: publish-resume
+
+# Run only when something gets merged to the default branch
 on:
   push:
     branches:
@@ -9,19 +11,36 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
+      # Check out the code itself
       - name: Set up Git repository
         uses: actions/checkout@v2
-      - name: Compile
+
+      # Install pdf->png tool first before even trying to compile PDF
+      - name: Install pdftoppm 
+        run: |
+          sudo apt isntall -y pdftoppm
+
+      # Build latex source into a PDF
+      - name: Compile PDF
         uses: xu-cheng/latex-action@v2
         with:
           root_file: resume.tex
           args: '-pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build'
-      - name: Generate Preview
-        run: |
-          pdftoppm -r 600 resume.pdf resume-preview -png
+      
+      # Double check that we produced a valid PDF
       - name: Validate
         run: |
           file ./build/resume.pdf | grep -q ' PDF '
+
+      # Convert each page of the PDF into a separate image
+      - name: Generate Preview Images
+        run: |
+          pdftoppm -r 600 resume.pdf resume-preview -png
+
+      # Commit the generated resources to the gh-pages branch, which
+      # is automatically synced to the GH Pages site at 
+      # bclarkx2.github.io/resume
       - name: Upload
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -30,3 +49,4 @@ jobs:
           exclude_assets: '.github,**.aux,**.fdb_latexmk,**.fls,**.log,**.out'
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
+
