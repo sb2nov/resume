@@ -19,7 +19,7 @@ jobs:
 
       # Install pdf->png tool first before even trying to compile PDF
       - name: Install pdftoppm 
-        run: sudo apt-get update && sudo apt-get install -y poppler-utils texlive latexmk
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils texlive-full latexmk
 
       # # Build latex source into a PDF
       # - name: Compile PDF
