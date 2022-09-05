@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [resume](#resume)
+  - [Preview](#preview)
+  - [Build](#build)
+    - [Docker](#docker)
+    - [Host](#host)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # resume
 
 Software Engineering resume for Brian Clark.
@@ -14,7 +26,7 @@ View PDF here: https://bclarkx2.github.io/resume/resume.pdf
 
 ### Docker
 
-To build the resume in Docker (recommended), just execute the following from the
+To build the resume in Docker (recommended), execute the following from the
 root of this repo:
 
 ```sh
