@@ -17,53 +17,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # # Install pdf->png tool first before even trying to compile PDF
-      # - name: Install pdftoppm 
-      #   # run: sudo apt-get update && sudo apt-get install -y poppler-utils texlive-full latexmk
-      #   run: sudo apt-get update && sudo apt-get install -y poppler-utils
-
-      # # Build latex source into a PDF
-      # - name: Compile PDF
-      #   uses: xu-cheng/latex-action@v2
-      #   with:
-      #     root_file: resume.tex
-      #     args: '-pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build'
-      #     post_compile: 'latexmk -c -output-directory=build'
- 
-      # - name: Compile PDF manually
-      #   run: |
-      #     latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build
-
-      # Double check that we produced a valid PDF
-      # - name: Validate
-      #   run: |
-      #     file ./build/resume.pdf | grep -q ' PDF '
-
-      # - name: debug PDF
-      #   run: |
-      #     echo "ls build"
-      #     ls build
-      #     echo "file build/resume.pdf"
-      #     file build/resume.pdf
-      #     echo "cat build/resume.pdf"
-      #     cat build/resume.pdf
-
-      # # Convert each page of the PDF into a separate image
-      # - name: Generate Preview Images
-      #   run: |
-      #     cd build 
-      #     pdftocairo -r 600 resume.pdf resume-preview -png
-
-      # - name: check image output
-      #   run: |
-      #     echo "ls ."
-      #     ls .
-      #     echo "ls build"
-      #     ls build
-
-      # - name: check pdftoppm version
-      #   run: pdftoppm -v
-  
       # Run build step
       - name: Build
         run: bash scripts/build-docker.sh
@@ -76,7 +29,7 @@ jobs:
         with:
           deploy_key: ${{ secrets.DEPLOY_KEY }}
           publish_dir: ./build
-          # exclude_assets: '.github,**.aux,**.fdb_latexmk,**.fls,**.log,**.out'
+          exclude_assets: '.github,.gitkeep'
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
 
