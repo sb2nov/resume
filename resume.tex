@@ -10,6 +10,7 @@
 \usepackage{enumitem}        % customize enumerate, itemize, and description
 \usepackage{hyperref}        % produce and customize hypertext links
 \usepackage{tabularx}        % add tabular envs with text wrap
+\usepackage{graphicx}        % Display company icons inline
 
 %-------------------------
 
@@ -88,6 +89,11 @@
 % One item w/in an aligned table
 \newcommand{\resumeTableItem}[2]{\textbf{#1} & #2\\}
 
+% Inline company icon
+\newcommand{\icon}[4]{
+  \raisebox{-#4\height}{\href{#2}{\includegraphics[height=#3]{#1}}}
+}
+
 %-------------------------------------------
 
 \begin{document}
@@ -106,7 +112,7 @@
 \section{Education}
   \begin{resumeHeadingList}
     \resumeHeading
-      {Case Western Reserve University}{Cleveland, OH}
+      {\icon{img/case.jpg}{https://case.edu}{4ex}{0.25}Case Western Reserve University}{Cleveland, OH}
       {B.S. in Computer Science, summa cum laude;  GPA: 3.945}{Aug 2014 - May 2018}
       \begin{resumeItemList}
         \resumeItem{Groups}{ACM, Tau Beta Pi Engineering Honor Society}
@@ -120,7 +126,7 @@
   \begin{resumeHeadingList}
 
     \resumeHeading
-      {Niche}{Pittsburgh, PA}
+      {\icon{img/niche.png}{https://niche/com}{4ex}{0.25}Niche}{Pittsburgh, PA}
       {Staff Software Engineer, Back End}{Jul 2022 - Present}
       \begin{resumeItemList}
         \resumeItem{Leadership}{As a staff engineer, I help guide the technical operations of a whole ``pod" containing multiple product teams. I help identify dependencies between teams, guide architectural discussions, and help influence engineering staffing on teams, in addition to making direct technical contributions.}
@@ -150,7 +156,7 @@
         \end{resumeItemList}
         
       \resumeHeading
-      {Epic Systems}{Madison, WI}
+      {\icon{img/epic.png}{https://epic.com}{4ex}{0.25}Epic Systems}{Madison, WI}
       {Software Developer}{Jul 2018 - Dec 2019}
       \begin{resumeItemList}
         \resumeItem{Immunization Scheduling}{Module owner for a patient safety critical implementation of the CDC \href{https://www.cdc.gov/vaccines/programs/iis/cdsi.html}{CDSi} vaccine schedule guidelines. Worked with physician stakeholders to implement accurate vaccine dose forecasting system scaled to millions of Epic patients.}
@@ -158,14 +164,14 @@
       \end{resumeItemList}
     
     \resumeHeading
-      {Viavi Solutions, Inc}{Germantown, MD}
+      {\icon{img/viavi.png}{https://viavisolutions.com}{2ex}{0.15}Viavi Solutions, Inc}{Germantown, MD}
       {Software Engineering Co-op}{Jan 2017 - Aug 2017}
       \begin{resumeItemList}
         \resumeLine{Developed Python test aggregation tools for the \href{https://www.viavisolutions.com/en-us/product-family/oneexpert-onx}{ONX} embedded device based on customer-specific JSON manifests.}
       \end{resumeItemList}
     
     \resumeHeading
-      {Case Western Reserve University}{Cleveland, OH}
+      {\icon{img/case.jpg}{https://case.edu}{4ex}{0.25}Case Western Reserve University}{Cleveland, OH}
       {Software Craftsmanship Teaching Assistant}{Aug 2017 - Dec 2017}
       \begin{resumeItemList}
         \resumeLine{Led weekly discussion sessions and code reviews to teach techniques for writing and maintainable readable Java programs.}
