@@ -1,0 +1,28 @@
+# release-resume throws the updated resume onto a release on GH
+name: release-resume
+
+# Only run when a tag is created
+on: 
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      # Check out the code itself
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      # Run build step
+      - name: Build
+        run: bash scripts/build-docker.sh
+      
+      # Release
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: build/resume.pdf
+

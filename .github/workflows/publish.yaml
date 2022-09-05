@@ -1,0 +1,34 @@
+# publish-resume sends the updated resume to GH Pages
+name: publish-resume
+
+# Run only when something gets merged to the default branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      # Check out the code itself
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Run build step
+      - name: Build
+        run: bash scripts/build-docker.sh
+
+      # Commit the generated resources to the gh-pages branch, which
+      # is automatically synced to the GH Pages site at 
+      # bclarkx2.github.io/resume
+      - name: Upload
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.DEPLOY_KEY }}
+          publish_dir: ./build
+          exclude_assets: '.github,.gitkeep'
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
