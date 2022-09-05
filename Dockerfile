@@ -1,12 +1,6 @@
-FROM ubuntu:xenial
-ENV DEBIAN_FRONTEND noninteractive
+# Start from a base appropriate for latex work
+FROM blang/latex:ubuntu
 
-RUN apt-get update -q && apt-get install -qy \
-    curl jq \
-    texlive-full \
-    python-pygments gnuplot \
-    make git \
-    && rm -rf /var/lib/apt/lists/*
+# Install poppler-utils in order to generate preview images
+RUN apt-get update -q && apt-get install -qy poppler-utils
 
-WORKDIR /data
-VOLUME ["/data"]
