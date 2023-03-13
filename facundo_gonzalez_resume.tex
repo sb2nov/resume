@@ -1,0 +1,304 @@
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{https://gonzalezfj.com.ar/cv?lang=es}{\Large Facundo J Gonzalez}} \\
+  \href{https://gonzalezfj.com.ar}{https://gonzalezfj.com.ar} \\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Educación}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Universidad Nacional de San Juan}{San Juan, Argentina}
+      {Lic. Ciencias de la Computación (Tesis en curso); Prom: 8.85}{2009 -- 2018}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experiencia}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+    {IovLabs}{Remoto}
+    {Tech Lead}{Septiembre 2022 - Actualidad}
+    \resumeItemListStart
+      \resumeItem{Facilitador}
+        {Como líder técnico, mi enfoque es facilitar la comunicación y la colaboración entre los miembros del equipo. Me aseguro de que todos estén alineados con los objetivos del proyecto y tengan una comprensión clara de sus roles y responsabilidades. Trabajo para identificar y resolver cualquier problema que pueda obstaculizar el progreso del proyecto}
+      \resumeItem{Métricas}
+        {Defino y superviso las métricas relevantes del proyecto y utilizo esta información para guiar la toma de decisiones. También utilizo estas métricas para evaluar el progreso del equipo y ofrecer retroalimentación útil y constructiva.}
+      \resumeItem{Architectura de software}
+        {Trabajo estrechamente con el equipo de líderes técnicos y los equipos de desarrollo para asegurarme de que la arquitectura sea escalable, flexible y cumpla con los requisitos del negocio y los estandares de la industria.}
+      \resumeItem{Propuestas técnicas}
+        {Elaboración de propuestas técnicas, comunicandolas de manera efectiva al equipo de desarrollo.}
+      \resumeItem{Documentación}
+        {Asegurarme de que la documentación esté actualizada y disponible para todo el equipo, lo que garantiza que el conocimiento se comparta y se preserve.}
+    \resumeItemListEnd
+    \resumeSubheading
+      {IovLabs}{Remoto}
+      {Fullstack developer}{Marzo 2019 - Agosto 2022}
+      \resumeItemListStart
+        \resumeItem{Mantenimiento y Fiabilidad}
+          {Establecer métricas de performance y de uso de memoria. Autoescalamiento de servicios en Kubernetes con HPA. Observabilidad con NewRelic, Grafana y Google Cloud Monitoring.}
+        \resumeItem{Redimiento del sitio web}
+          {Configuración de Webpack, Babel, para un sitio con Server side rendering. Optimización de código y optimización de carga de páginas, con Loadable, BundleAnalyzer. Y mejora continua con un servicio de LighthouseCI}
+        \resumeItem{Imgproxy y TUS protocol}
+          {Desarrollo de servicio de subida de imágenes}
+        \resumeItem{Entorno de pruebas efímeros}
+          {Desarrollo de entornos para pruebas efímeros, Docker, Kubernetes, Kustomize, Jenkins, Bash, Cloudflare Dynamic DNS.}
+        \resumeItem{RedisSearch}
+          {Implementación de redis search para búsqueda por tags en imágenes con Google Vision}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Cámara de Diputados}{San Juan, Argentina}
+      {Líder Técnico}{2016 - 2020}
+      \resumeItemListStart
+        \resumeItem{Gestión de proyectos}
+          {Trello, Notion y Enterprise Architect}
+        \resumeItem{CI/CD}
+          {GitLab con build en kubernetes workers y Window Server Workers}
+        \resumeItem{Infraestructura}
+          {Configuración Servidores Dell con VMware con Storage DELL, NFS, Cluster Kubernetes (Rancher).}
+      \resumeItemListEnd
+    
+    \resumeSubheading
+      {Cámara de Diputados}{San Juan, Argentina}
+      {Fullstack Developer}{2014 - 2016}
+      \resumeItemListStart
+        \resumeItem{Sistema de Impuesto a las ganancias}
+          {Angular, SQLserver, C\# .NET Core.}
+        \resumeItem{Sistema de control de asistencia}
+          {kiosk de marcado con UI en React sobre Raspberry+ZKTECO, backend un orquestador en NodeJS, MySQL.}
+        \resumeItem{Sistemas integrados de Digesto Jurídico de San Juan}
+          {Sitio de consulta de Leyes \(Multi-Tenant\): desarrollado en Angular, con backend en NodeJS y buscador en Elastic Search con cache en Redis. Backoffice: Go, Posgrest y NextJS. App mobile offline first: Ionic, Sqlite FTS.}
+      \resumeItemListEnd
+  
+    \resumeSubheading
+      {TravelPaq}{San Juan, Argentina}
+      {Freelance}{2017 - 2019}
+      \resumeItemListStart
+        \resumeItem{SDK de pagos multigateway}
+          {SDK en React transpilado a js portable, Playground del sdk con un ejemplo de Checkout con React/Angular/Vanilla js, API REST de promociones bancarias por gateway/merchant, Mercadopago js sdk, PayU js sdk, TodoPago js sdk.}
+        \resumeItem{Api de búsqueda de paquetes turísticos}
+          {Java 11, Maven, Hibernate, MySQL. AWS S3.}
+      \resumeItemListEnd
+  
+    \resumeSubheading
+      {Sistema Integral Informático de Seguridad}{Policía de San Juan, Argentina}
+      {Fullstack developer}{2015 - 2016}
+      \resumeItemListStart
+        \resumeItem{SIIS}
+          {Miembro del equipo del proyecto de desarrollo de sistema informático para el control y comunicación de todas las comisarías de la provincia. AngularJS, CakePHP.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%
+%--------PROGRAMMING SKILLS------------
+\section{Habilidades de programación}
+ \resumeSubHeadingListStart
+   \item{
+     \textbf{Lenguajes}{: PHP, Python, Javascript, Typescript, CSS, SASS, Go, C\#, SQL y Java}
+   }
+   \item{
+    \textbf{Frameworks \& Libraries}{: CakePHP, Laravel, Express, NestJS, Gin/GORM, EF/MVC, Angular, React, Preact, NextJs y SocketIO }
+   }
+   \item{
+    \textbf{Bases de datos \& Messaging system}{: Mysql, PostgreSql, MongoDB, Redis, Elastic Search, RabbitMQ y Kafka}
+   }
+   \item{
+     \textbf{Cloud Providers, IaaS \& PaaS}{: Google Cloud Platform, Amazon Web Services, VMWare vSphere, Mia-Platform, Digital Ocean, y Vercel }
+   }
+   \item{
+     \textbf{Otras herramientas}{: Docker, Kubernetes (Rancher, GKE),  }
+   }
+ \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+
+\section{CURSOS Y SEMINARIOS }
+ \resumeSubHeadingListStart
+   \item{
+    2012: Asistencia al curso “Centro de cómputos: Tecnologías e implementaciones en sistemas de tipo UNIX”, XVI Escuela internacional de informática. Congreso Argentino de Cs de la computación, Universidad Nacional del Sur. Bahía Blanca, Buenos Aires, Argentina 
+    }
+   \item{
+    2013: Asistencia a la escuela ECAR HPCLATAM 2013, y expositor en el “Latin American Symposium on High Performance Computing”, Instituto de Ciencias Básicas \(ICB\) de la Universidad Nacional de Cuyo, Mendoza, Argentina. 
+    }
+   \item{
+    2014: Participante de la Escuela de programación Training Camp Quinta Edición de Argentina, Universidad de Buenos Aires, Capital Federal, Buenos Aires, Argentina. 
+    }
+   \item{
+    2014: Miembro del equipo ganador del Torneo Argentino de Programación Sede Chilecito, Universidad Nacional de Chilecito, La Rioja, Argentina. 
+    }
+   \item{
+    2014: Participante de la competencia regional sudamericana ACM-ICPC \(The ACM International Collegiate Programming Contest, auspiciada por IBM a nivel internacional\), Universidad de Buenos Aires, Capital Federal, Buenos Aires, Argentina. 
+    }
+   \item{
+    2014: Asistencia al curso “Aceleración con GPUs: Arquitectura y programación CUDA”, dictado por el Cuda Fellow Manuel Ujaldón, de la Universidad de Málaga, en el marco de la Escuela de Verano RIO 2014, Rio Cuarto, Córdoba, Argentina. 
+    }
+   \item{
+    2014: Asistencia a la “Tercera Escuela Argentina de GPGPU Computing para Aplicaciones Científicas”, Instituto Balseiro, Universidad Nacional de Cuyo y Comisión Nacional de Energía Atómica, San Carlos de Bariloche, San Carlos de Bariloche, Rio Negro, Argentina. 
+    }
+   \item{
+    2014: Asistencia al curso de programación paralela, Ph.D. Leo Ferres, University of Concepción, Chile.
+    }
+   \item{
+    2014: Asistencia al congreso y simposio “CARLA 2014 - First HPCLATAM - CLCAR Joint Conference”, Universidad Técnica Federico Santa María, Valparaíso, Chile. 
+    }
+   \item{
+    2016: Asistencia al curso "Diseño de sistemas interactivos desde un enfoque centrado en el usuario, Dr. Cesar Collazos, Universidad del Cauca, Colombia.
+    }
+   \item{
+    2017: Participante de la competencia “Hackathon de Unearthed Argentina”, Digital House, Buenos Aires, Argentina. 
+    }
+   \item{
+    2018: Asistencia a la 3ra edición del Foro Argentina Abierta, Universidad Nacional de Cuyo, Mendoza, Argentina 
+    }
+   \item{
+    2018: Asistencia a las Jornadas de Seguridad Informática e Investigación Digital y Forense, Taller de herramientas forenses, Universidad Nacional de San Juan, Argentina. 
+    }
+   \item{
+    2019: Asistencia al III Congreso Internacional de Ciencias de la Computación y Sistemas de Información, Universidad Nacional de San Juan, Argentina. 
+    }
+   \item{
+    2019: Asistencia a la conferencia de Desarrollo Web Frontend “WebConf”, Córdoba, Argentina.  
+    }
+   \item{
+    2020: Asistencia al curso “Enfoques clásicos y neuronales a la Minería de Texto”, dictado por Dr. Marcelo Luis Errecalde, de la Universidad Nacional de San Luis, en el marco de la Escuela de Verano RIO 2020, Rio Cuarto, Córdoba, Argentina. 
+    }
+   \item{
+    2020: Asistencia al curso “Abstracciones en la Práctica de la Programación Funcional”, dictado por Dr. Mauro Jaskelioff, de la Universidad Nacional de Rosario, en el marco de la Escuela de Verano RIO 2020, Rio Cuarto, Córdoba, Argentina. 
+    }
+   \item{
+    2020: Certificación exámen: "Mercado Pago Certified Developer for Online Payments Checkout Pro", Mercado Pago Partners Team.
+    }
+   \item{
+    2021: Certificación curso: "K8s para Arquitectos", dictado por Go Elevate.
+    }
+   \item{
+    2021: Instrumentación dinámica con eBPF, dictado por: Ing. Fernando Gleiser, Centro de Computación de Alto Desempeño \(CCAD\) - Universidad Nacional de Córdoba.
+    }
+   \item{
+    2023: Asistencia al curso "Microservicios en NodeJS", dictado por: Aforo255 Training Center.
+    }
+ \resumeSubHeadingListEnd
+
+ \section{Produción Científica}
+ \resumeSubHeadingListStart
+   \item{
+      2013: Cloud Computing con herramientas libres para evaluación de modelos de despliegue híbrido. XVI Workshop de Investigadores en Ciencias de la Computación. 
+    }
+    \item{
+      2013: Perspectives in processing large amounts of information using Cloud. Journal of Computer Science \& Technology; vol. 13, no. 3 
+    }
+    \item{
+      2013: Administración de QoS en ambientes de redes de servicios convergentes. XV Workshop de Investigadores en Ciencias de la Computación. 
+    }
+    \item{
+      2014: Evaluación de costos de comunicación en arquitecturas para computación heterogénea aplicadas a computación científica. XVI Workshop de Investigadores en Ciencias de la Computación. 
+    }
+ \resumeSubHeadingListEnd
+
+ \section{Distinciones}
+ \resumeSubHeadingListStart
+   \item{
+      2015: Primer escolta suplente de la Facultad de Ciencias Exactas Físicas y Naturales de la Universidad Nacional de San Juan.  
+    }
+ \resumeSubHeadingListEnd
+
+
+
+\end{document}
