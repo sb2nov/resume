@@ -89,29 +89,29 @@
 % COLOR THEMES SELECTION
 
 % For Light theme un-comment this and comment the Dark theme section below
-\colorlet{textcolor}{black}
-\colorlet{urlcolor}{blue}
-\newcommand{\otherThemeRef}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_dark.pdf}{ Dark \color{urlcolor}{\faicon{lightbulb-o}}}}
-\newcommand{\latestVersion}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_light.pdf}{Latest \color{urlcolor}{\faicon{refresh}}}}
+% \colorlet{textcolor}{black}
+% \colorlet{urlcolor}{blue}
+% \newcommand{\otherThemeRef}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_dark.pdf}{ Dark \color{urlcolor}{\faicon{lightbulb-o}}}}
+% \newcommand{\latestVersion}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_light.pdf}{Latest \color{urlcolor}{\faicon{refresh}}}}
 
-\begin{document}
+% \begin{document}
 % ---
 
 % For Dark theme un-comment this and comment the Light theme section above
-% \colorlet{textcolor}{white!80!gray}
-% \colorlet{backgroundcolor}{black!30!gray}
-% \colorlet{urlcolor}{blue!25!white}
-% \AtBeginDocument{\color{textcolor}}
-% \newcommand{\otherThemeRef}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_light.pdf}{Light \color{urlcolor}{\faicon{lightbulb-o}}}}
-% \newcommand{\latestVersion}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_dark.pdf}{Latest \color{urlcolor}{\faicon{refresh}}}}
+\colorlet{textcolor}{white!80!gray}
+\colorlet{backgroundcolor}{black!30!gray}
+\colorlet{urlcolor}{blue!25!white}
+\AtBeginDocument{\color{textcolor}}
+\newcommand{\otherThemeRef}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_light.pdf}{Light \color{urlcolor}{\faicon{lightbulb-o}}}}
+\newcommand{\latestVersion}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_dark.pdf}{Latest \color{urlcolor}{\faicon{refresh}}}}
 
-% \begin{document}
-% \pagecolor{backgroundcolor}
+\begin{document}
+\pagecolor{backgroundcolor}
 % ---
 
 % HEADING
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\Large Wilmer A. Gonzalez S.} \href{https://linktr.ee/wilmerags}{\color{urlcolor} \faicon{link}}\\
+  \textbf{\Large Wilmer A. Gonzalez S.} \href{https:wilmerags.com}{\color{urlcolor} \faicon{link}}\\
   Machine learning engineer & \href{mailto:wilmeragsgm@gmail.com}{\color{urlcolor}{\faicon{envelope}} \color{textcolor} wilmeragsgm} \\
   \textsl{Caracas, Venezuela.} & \href{https://www.linkedin.com/in/wilmeragslin/}{ \color{urlcolor}{\faicon{linkedin}} \color{textcolor} wilmeragslin} \\
   \textsl{\small \latestVersion} /\textsl{\small \otherThemeRef} & \href{https://github.com/wilmeragsgh}{  \color{urlcolor}{\faicon{github}} \color{textcolor} wilmeragsgh}\\
@@ -121,9 +121,30 @@
 % EXPERIENCE
 \section{Experience}
   \resumeSubHeadingListStart
+
     \resumeSubheading
-      {CircleUp}{(remote) Caracas, VE}
-      {Machine learning engineer}{August 2021 - Present}
+      {Sigma}{(remote) Caracas, VE}
+      {Senior Machine learning engineer}{June 2023 - Present}
+      \resumeItemListStart
+      \resumeItem{Enable content validation for an ad-tech company.}
+      \resumeItemListEnd
+      \resumeTech{Technologies}{GCP, Python.}\\
+    %   \resumeTech{Theory}{Machine learning, AutoML, Feature engineering, Project management.}
+    \sepsection
+    
+    \resumeSubheading
+      {Brightflow.AI}{(remote) Caracas, VE}
+      {Machine learning engineer}{May 2023 - Present}
+      \resumeItemListStart
+      \resumeItem{Enable usage of industry data and models to enhance financial metrics for business owners.}
+      \resumeItemListEnd
+      \resumeTech{Technologies}{AWS, Python, Athena.}\\
+    %   \resumeTech{Theory}{Machine learning, AutoML, Feature engineering, Project management.}
+    \sepsection
+  
+    \resumeSubheading
+      {CircleUp (Acquired by Brightflow.AI)}{(remote) Caracas, VE}
+      {Machine learning engineer}{August 2021 - June 2023}
       \resumeItemListStart
       \resumeItem{Enable ML monitoring practices across 5 use-cases in the CPG industry.}
       \resumeItem{Enable semantic comparison of 1.7M brands and a hundred thousand text attributes.}
@@ -158,6 +179,7 @@
       
     \sepsection
 
+    \newpage
     \resumeSubheading
       {Universidad Central de Venezuela}{Caracas, VE}
       {Adjunct professor (Advanced topics in AI)}{October 2018 - June 2021}
@@ -175,7 +197,6 @@
       \resumeTech{Technologies}{Python, Latex, R, Weka, Colab, Jupyter and swirl.}\\
     %   \resumeTech{Theory}{Artificial intelligence, Data science and Data mining.}
 
-    \newpage
     \resumeSubheading
       {Omdena}{(remote) Caracas, VE}
       {Lead machine learning engineer}{Jan 2021 - Apr 2021}
@@ -223,7 +244,7 @@
     %   \resumeTech{Theory}{Deep learning and Text classification.}
 
     \sepsection
-
+    \newpage
     \resumeSubheading
       {Fetcher}{Caracas, VE}
       {Data scientist}{June 2018 - February 2019}
