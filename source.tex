@@ -89,24 +89,24 @@
 % COLOR THEMES SELECTION
 
 % For Light theme un-comment this and comment the Dark theme section below
-% \colorlet{textcolor}{black}
-% \colorlet{urlcolor}{blue}
-% \newcommand{\otherThemeRef}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_dark.pdf}{ Dark \color{urlcolor}{\faicon{lightbulb-o}}}}
-% \newcommand{\latestVersion}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_light.pdf}{Latest \color{urlcolor}{\faicon{refresh}}}}
+\colorlet{textcolor}{black}
+\colorlet{urlcolor}{blue}
+\newcommand{\otherThemeRef}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_dark.pdf}{ Dark \color{urlcolor}{\faicon{lightbulb-o}}}}
+\newcommand{\latestVersion}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_light.pdf}{Latest \color{urlcolor}{\faicon{refresh}}}}
 
-% \begin{document}
+\begin{document}
 % ---
 
 % For Dark theme un-comment this and comment the Light theme section above
-\colorlet{textcolor}{white!80!gray}
-\colorlet{backgroundcolor}{black!30!gray}
-\colorlet{urlcolor}{blue!25!white}
-\AtBeginDocument{\color{textcolor}}
-\newcommand{\otherThemeRef}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_light.pdf}{Light \color{urlcolor}{\faicon{lightbulb-o}}}}
-\newcommand{\latestVersion}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_dark.pdf}{Latest \color{urlcolor}{\faicon{refresh}}}}
+% \colorlet{textcolor}{white!80!gray}
+% \colorlet{backgroundcolor}{black!30!gray}
+% \colorlet{urlcolor}{blue!25!white}
+% \AtBeginDocument{\color{textcolor}}
+% \newcommand{\otherThemeRef}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_light.pdf}{Light \color{urlcolor}{\faicon{lightbulb-o}}}}
+% \newcommand{\latestVersion}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_dark.pdf}{Latest \color{urlcolor}{\faicon{refresh}}}}
 
-\begin{document}
-\pagecolor{backgroundcolor}
+% \begin{document}
+% \pagecolor{backgroundcolor}
 % ---
 
 % HEADING
@@ -123,22 +123,25 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Sigma}{(remote) Caracas, VE}
-      {Senior Machine learning engineer}{June 2023 - Present}
-      \resumeItemListStart
-      \resumeItem{Enable content validation for an ad-tech company.}
-      \resumeItemListEnd
-      \resumeTech{Technologies}{GCP, Python.}\\
-    %   \resumeTech{Theory}{Machine learning, AutoML, Feature engineering, Project management.}
-    \sepsection
-    
-    \resumeSubheading
       {Brightflow.AI}{(remote) Caracas, VE}
       {Machine learning engineer}{May 2023 - Present}
       \resumeItemListStart
       \resumeItem{Enable usage of industry data and models to enhance financial metrics for business owners.}
+      \resumeItem{Grown and categorize 1.7M brands to be used by customers.}
       \resumeItemListEnd
-      \resumeTech{Technologies}{AWS, Python, Athena.}\\
+      \resumeTech{Technologies}{AWS, Python, BERT, OpenAI ChatGPT, Athena.}\\
+    %   \resumeTech{Theory}{Machine learning, AutoML, Feature engineering, Project management.}
+    \sepsection
+
+    \resumeSubheading
+      {Sigma}{(remote) Caracas, VE}
+      {Senior Machine learning engineer}{June - September, 2023}
+      \resumeItemListStart
+      \resumeItem{Develop misleading claims detection in advertising by using Google's LLM and prompt engineering.}
+      \resumeItem{Integrate third-party ML services for feature detection and moderation on advertising creatives (image and text-based).}
+      \resumeItem{Develop instruments for validation and comparison of third-party ML services.}
+      \resumeItemListEnd
+      \resumeTech{Technologies}{Large Language Models (LLM), Prompt Engineering, Vertex AI, Google Cloud Platform (GCP), Python, Natural Language Processing (NLP).}\\
     %   \resumeTech{Theory}{Machine learning, AutoML, Feature engineering, Project management.}
     \sepsection
   
@@ -162,14 +165,14 @@
       \resumeItem{Detect key actors and information hubs by processing 150k user's data with Network analysis.}
       \resumeItem{Sped up the analytical workflow by 75\% by redesigning the sampling strategy for jobs.}
       \resumeItemListEnd
-      \resumeTech{Technologies}{Python, R, JS, Vue, Bash, Gephi, Power BI, REST APIs, Airflow, Tensorflow, BERT.}\\
+      \resumeTech{Technologies}{Python, R, Bash, Gephi, Power BI, REST API, Vue, Airflow, Kubernetes, Tensorflow, BERT, NLP, Data engineering, Data visualization, Workflow orchestration, Social networks analytics.}\\
     %   \resumeTech{Theory}{Topic modeling, Community detection, Network Analysis and NLP, Data visualization, Data engineering}
     
     \sepsection
 
     \resumeSubheading
       {Quash}{(remote) Caracas, VE}
-      {Machine learning engineer}{March 2021 - July 2021}
+      {Machine learning engineer}{March - July, 2021}
       \resumeItemListStart
       \resumeItem{Technical guide of the Data Science team.}
       \resumeItem{Improve the adaptability of the scoring API by creating 10+ features engineering stages.}
@@ -199,7 +202,7 @@
 
     \resumeSubheading
       {Omdena}{(remote) Caracas, VE}
-      {Lead machine learning engineer}{Jan 2021 - Apr 2021}
+      {Lead machine learning engineer}{Jan - Apr, 2021}
       \resumeItemListStart
       \resumeItem{Helped create a trust score for news articles by implementing a claim detection model.}
       \resumeItem{Improved usability of the product by creating a chrome extension connected to resultant models.}
@@ -211,7 +214,7 @@
 \sepsection
     \resumeSubheading
       {Oliver Wyman}{(remote) Caracas, VE}
-      {Data engineer}{July 2020 - November 2020}
+      {Data engineer}{July - November, 2020}
       \resumeItemListStart
       \resumeItem{Enabled data pipelines processing by provisioning and configuring Airflow.}
       \resumeItem{Created DAGs for 30+ stored procedures from SQL Server scripts.}
@@ -236,7 +239,7 @@
 
     \resumeSubheading
       {Advoqt}{(remote) Caracas, VE}
-      {Machine learning engineer}{February 2019 - August 2019}
+      {Machine learning engineer}{February - August, 2019}
       \resumeItemListStart
       \resumeItem{Increased security by implementing a Deep Learning model for classifying malicious urls with high accuracy.}
       \resumeItemListEnd
