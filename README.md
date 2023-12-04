@@ -17,6 +17,18 @@ docker build -t latex .
 docker run --rm -i -v "$PWD":/data latex pdflatex sourabh_bajaj_resume.tex
 ```
 
+#### Compiling the template locally for all CPU architectures
+
+```sh
+docker run --rm -i -v "$PWD":/data mingc/latex pdflatex *.tex
+```
+If you want to build the pdf as you change the text file use watchman from Facebook
+```sh
+brew update && brew install watchman 
+
+watchman-make -p *.tex --run "docker run --rm -i -v `pwd`:/data mingc/latex pdflatex *.tex"
+```
+
 ### Preview
 
 ![Resume Screenshot](/resume_preview.png)
