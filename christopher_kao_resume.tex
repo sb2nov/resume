@@ -127,84 +127,78 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Google}{Mountain View, CA}
-      {Software Engineer}{Oct 2016 - Present}
+      {Cruise}{San Francisco, CA}
+      {Senior Software Engineer, Fleet Efficiency}{Nov 2022 - Present}
       \resumeItemListStart
-        \resumeItem{Tensorflow}
-          {TensorFlow is an open source software library for numerical computation using data flow graphs; primarily used for training deep learning models. Worked on APIs and performance for training models on Tensor Processing Units (TPU).}
-        \resumeItem{Apache Beam}
-          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines, as well as a set of language-specific SDKs for constructing pipelines and runners.}
+        \resumeItem{Unstructured Calibration}
+          {Built modular React UI for operators to run unstructured calibration on autonomous vehicles. Contributed to TypeScript service to process calibration state, status, and commands between UI and vehicle comms service via GCP Pub/Sub, gRPC, and Redis.}
+        \resumeItem{SLO's}
+          {Led SLO work for team. Added 50 Datadog metrics and 20 SLO's across 4 services.}
+        \resumeItem{Vehicle Transfer}
+          {Designed and implemented system for autonomously transferring vehicles between facilities by coordinating services for parking spot state management, waypoint assignment, and driverless depart commands.}
       \resumeItemListEnd
-      
-% --------Multiple Positions Heading------------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%    \resumeSubHeadingListEnd
-%-------------------------------------------
 
     \resumeSubheading
-      {Coursera}{Mountain View, CA}
-      {Senior Software Engineer}{Jan 2014 - Oct 2016}
+      {Meta}{Menlo Park, CA}
+      {Software Engineer, Facebook Marketplace Recommendation and Delivery Infrastructure}{Mar 2022 - Nov 2022}
       \resumeItemListStart
+        \resumeItem{ML Model Ranker}
+          {Implemented ranking mechanism to prioritize loading ML models used in production over ones used in experiments. Added config with ML model memory estimates and per-deployment memory budgets.}
+        \resumeItem{Local ML Model Management}
+          {Wrote in C++ to load 400 machine learning models locally on production servers. Reduced average Marketplace item ranking latency by 100ms because of reduced network requests.}
+        \resumeItem{ML Model Reaper}
+          {Created automated system which discovers ML models that have not received traffic in 7 days, and creates tasks for model owners to clean up models from configs. Freed capacity on over 100 unused model versions.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {WePay (a Chase Company)}{Redwood City, CA}
+      {Senior Software Engineer, Enterprise Engineering}{Jun 2020 - Mar 2022}
+      \resumeItemListStart
+        \resumeItem{People Portal}
+          {Developed Java microservices to automate employee onboarding/offboarding with Windows Active Directory, Jira, Google API. Built React application with Ant Design framework.}
         \resumeItem{Notifications}
-          {Service for sending email, push and in-app notifications. Involved in features such as delivery time optimization, tracking, queuing and A/B testing. Built an internal app to run batch campaigns for marketing etc.}
-        \resumeItem{Nostos}
-          {Bulk data processing and injection service from Hadoop to Cassandra and provides a thin REST layer on top for serving offline computed data online.}
-        \resumeItem{Workflows}
-          {Dataduct an open source workflow framework to create and manage data pipelines leveraging reusables patterns to expedite developer productivity.}
-        \resumeItem{Data Collection}
-          {Designed the internal survey and crowd sourcing platform which allowed for creating various tasks for crowd sourcing or embedding surveys across the Coursera platform.}
-        \resumeItem{Dev Environment}
-          {Analytics environment based on docker and AWS, standardized the python and R dependencies. Wrote the core libraries that are shared by all data scientists.}
-        \resumeItem{Data Warehousing}
-          {Setup, schema design and management of Amazon Redshift. Built an internal app for access to the data using a web interface. Dataduct integration for daily ETL injection into Redshift.}
-        \resumeItem{Recommendations}
-          {Core service for all recommendation systems at Coursera, currently used on the homepage and throughout the content discovery process. Worked on both offline training and online serving.}
-        \resumeItem{Content Discovery}
-          {Improved content discovery by building a new onboarding experience on coursera. Using this to personalize the search and browse experience. Also worked on ranking and indexing improvements.}
-        \resumeItem{Course Dashboards}
-          {Instructor dashboards and learner surveying tools, which helped instructors run their class better by providing data on Assignments and Learner Activity.}
+          {Wrote microservice to send templated emails and Slack messages to hiring managers, offboarding managers.}
+        \resumeItem{Laptop Asset Management}
+          {Designed microservice which interacts with Jamf Pro API, Jira API, and MySQL database.}
+        \resumeItem{Automation}
+          {Wrote Python Airflow DAGs to automate employee onboarding/offboarding, asset sync, Windows Active Directory sync.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Lucena Research}{Atlanta, GA}
-      {Data Scientist}{Summer 2012 and 2013}
+      {Built Robotics}{San Francisco, CA}
+      {Software Engineer, UI/Infrastructure}{Jul 2019 - Apr 2020}
       \resumeItemListStart
-        \resumeItem{Portfolio Management}
-          {Created models for portfolio hedging,  portfolio optimization and price forecasting. Also creating a strategy backtesting engine used for simulating and backtesting strategies.}
-        \resumeItem{QuantDesk}
-          {Python backend for a web application used by hedge fund managers for portfolio management.}
+        \resumeItem{Robot Operating System (ROS)}
+          {Wrote nodes in Python to send location, network latency, and health from robot to React app. Wrote robot actions catalog server.}
+        \resumeItem{Teleoperation}
+          {Wrapped React app with Electron to send keyboard controls via UDP to robot node. Created translator which subscribes to keyboard messages and publishes ROS joystick messages.}
       \resumeItemListEnd
 
-    \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Research and Teaching Assistant}{Jan 2012 - Dec 2013}
-      \resumeItemListStart
-        \resumeItem{Research Assistant - Machine Learning}
-          {Research on machine learning for portfolio hedging and replication algorithms. Modeling low-risk \& continuous-return strategies. Developed the python library QSTK.}
-        \resumeItem{Teaching Assistant - Computational Investing}
-          {The online course on Coursera, had more than 100,000 students enrolled. It was featured on the 11 Alive News and the Atlanta Journal Constitution. Involved in creating assignment, exams and conducting recitation sessions. Also taught the on-campus version of the course.}
-      \resumeItemListEnd
+      % --------Multiple Positions Heading------------
+      %    \resumeSubSubheading
+      %     {Software Engineer I}{Oct 2014 - Sep 2016}
+      %     \resumeItemListStart
+      %        \resumeItem{Apache Beam}
+      %          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+      %     \resumeItemListEnd
+      %    \resumeSubHeadingListEnd
+%-------------------------------------------
 
   \resumeSubHeadingListEnd
 
 
 %-----------PROJECTS-----------------
-\section{Projects}
-  \resumeSubHeadingListStart
-    \resumeSubItem{QuantSoftware Toolkit}
-      {Open source python library for financial data analysis and machine learning for finance.}
-    \resumeSubItem{Github Visualization}
-      {Data Visualization of Git Log data using D3 to analyze project trends over time.}
-    \resumeSubItem{Recommendation System}
-      {Music and Movie recommender systems using collaborative filtering on public datasets.}
-    \resumeSubItem{Mac Setup}
-      {Book that gives step by step instructions on setting up developer environment on Mac OS.}
-  \resumeSubHeadingListEnd
+% \section{Projects}
+%   \resumeSubHeadingListStart
+%     \resumeSubItem{QuantSoftware Toolkit}
+%       {Open source python library for financial data analysis and machine learning for finance.}
+%     \resumeSubItem{Github Visualization}
+%       {Data Visualization of Git Log data using D3 to analyze project trends over time.}
+%     \resumeSubItem{Recommendation System}
+%       {Music and Movie recommender systems using collaborative filtering on public datasets.}
+%     \resumeSubItem{Mac Setup}
+%       {Book that gives step by step instructions on setting up developer environment on Mac OS.}
+%   \resumeSubHeadingListEnd
 
 %
 %--------PROGRAMMING SKILLS------------
@@ -216,6 +210,8 @@
 %      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
 %    }
 %  \resumeSubHeadingListEnd
+
+% talk about documentation, 2 interns, and interviewing candidates
 
 
 %-------------------------------------------
