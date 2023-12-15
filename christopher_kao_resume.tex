@@ -1,0 +1,224 @@
+%-------------------------
+% Resume in Latex
+% Author : Christopher Kao
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadingThreeLines}[8]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+      \textit{\small#5} & \textit{\small #6} \\
+      \textit{\small#7} & \textit{\small #8} \\
+      % \small#3 & \small #4 \\
+      % \small#5 & \small #6 \\
+      % \small#7 & \small #8 \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{http://christopherkao.me/}{\Large Christopher Kao}} & Email : \href{mailto:christopherkao@icloud.com}{christopherkao@icloud.com}\\
+  \href{https://christopherkao.me/}{https://www.christopherkao.me} & Mobile : \href{tel:+17148555951}{+1-714-855-5951} \\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheadingThreeLines
+      {University of Pennsylvania}{Philadelphia, PA}
+      {Master of Science in Engineering in Robotics - School of Engineering and Applied Science}{Aug 2014 - May 2019}
+      {Bachelor of Applied Science in Computer Science - School of Engineering and Applied Science}{}
+      {Bachelor of Science in Economics - Wharton School}{}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Cruise}{San Francisco, CA}
+      {Senior Software Engineer, Fleet Efficiency}{Nov 2022 - Present}
+      \resumeItemListStart
+        \resumeItem{Unstructured Calibration}
+          {Built modular React UI for operators to run unstructured calibration on autonomous vehicles. Contributed to TypeScript service to process calibration state, status, and commands between UI and vehicle comms service via GCP Pub/Sub, gRPC, and Redis.}
+        \resumeItem{SLO's}
+          {Led SLO work for team. Added 50 Datadog metrics and 20 SLO's across 4 services.}
+        \resumeItem{Vehicle Transfer}
+          {Designed and implemented system for autonomously transferring vehicles between facilities by coordinating services for parking spot state management, waypoint assignment, and driverless depart commands.}
+            % TODO: Mention vehicle playlist hackathon project we won in organization
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Meta}{Menlo Park, CA}
+      {Software Engineer, Facebook Marketplace Recommendation and Delivery Infrastructure}{Mar 2022 - Nov 2022}
+      \resumeItemListStart
+        \resumeItem{ML Model Ranker}
+          {Implemented ranking mechanism to prioritize loading ML models used in production over ones used in experiments. Added config with ML model memory estimates and per-deployment memory budgets.}
+        \resumeItem{Local ML Model Management}
+          {Wrote in C++ to load 400 machine learning models locally on production servers. Reduced average Marketplace item ranking latency by 100ms because of reduced network requests.}
+        \resumeItem{ML Model Reaper}
+          {Created automated system which discovers ML models that have not received traffic in 7 days, and creates tasks for model owners to clean up models from configs. Freed capacity on over 100 unused model versions.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {WePay (a Chase Company)}{Redwood City, CA}
+      {Senior Software Engineer, Enterprise Engineering}{Jun 2020 - Mar 2022}
+      \resumeItemListStart
+        \resumeItem{People Portal}
+          {Developed Java microservices to automate employee onboarding/offboarding with Windows Active Directory, Jira, Google API. Built React application with Ant Design framework.}
+        \resumeItem{Notifications}
+          {Wrote microservice to send templated emails and Slack messages to hiring managers, offboarding managers.}
+        \resumeItem{Laptop Asset Management}
+          {Designed microservice which interacts with Jamf Pro API, Jira API, and MySQL database.}
+        \resumeItem{Automation}
+          {Wrote Python Airflow DAGs to automate employee onboarding/offboarding, asset sync, Windows Active Directory sync.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Built Robotics}{San Francisco, CA}
+      {Software Engineer, UI/Infrastructure}{Jul 2019 - Apr 2020}
+      \resumeItemListStart
+        \resumeItem{Robot Operating System (ROS)}
+          {Wrote nodes in Python to send location, network latency, and health from robot to React app. Wrote robot actions catalog server.}
+        \resumeItem{Teleoperation}
+          {Wrapped React app with Electron to send keyboard controls via UDP to robot node. Created translator which subscribes to keyboard messages and publishes ROS joystick messages.}
+      \resumeItemListEnd
+
+      % --------Multiple Positions Heading------------
+      %    \resumeSubSubheading
+      %     {Software Engineer I}{Oct 2014 - Sep 2016}
+      %     \resumeItemListStart
+      %        \resumeItem{Apache Beam}
+      %          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+      %     \resumeItemListEnd
+      %    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+% \section{Projects}
+%   \resumeSubHeadingListStart
+%     \resumeSubItem{QuantSoftware Toolkit}
+%       {Open source python library for financial data analysis and machine learning for finance.}
+%     \resumeSubItem{Github Visualization}
+%       {Data Visualization of Git Log data using D3 to analyze project trends over time.}
+%     \resumeSubItem{Recommendation System}
+%       {Music and Movie recommender systems using collaborative filtering on public datasets.}
+%     \resumeSubItem{Mac Setup}
+%       {Book that gives step by step instructions on setting up developer environment on Mac OS.}
+%   \resumeSubHeadingListEnd
+
+%
+%--------SKILLS------------
+\section{Skills}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Languages}
+      {TypeScript, Python, C++, Java, HTML; English, Mandarin, Spanish}
+    \resumeSubItem{Technologies}
+      {React, Google Cloud Platform (GCP), Kubernetes, Datadog, PostgreSQL, Redis}
+    \resumeSubItem{Documentation}
+      {Named by 2 managers as team's Documentation Champion. Contributed 6 Wiki's per quarter.}
+    \resumeSubItem{Communication}
+      {Managers, product managers, and designers have given me feedback as being excellent communicator to stakeholders.}
+    \resumeSubItem{Mentoring}
+      {Mentored 2 summer interns at Cruise and WePay.}
+ \resumeSubHeadingListEnd
+
+% talk about documentation, 2 interns, and interviewing candidates
+
+
+%-------------------------------------------
+\end{document}
