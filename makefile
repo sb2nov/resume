@@ -6,5 +6,5 @@ all:
 	pdflatex $(file).tex
 
 clean:
-	rm *.out *.aux *.log
+	rm -f *.out *.aux *.log *.synctex.gz
 
