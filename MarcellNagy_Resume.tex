@@ -21,7 +21,8 @@
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
-\fancyfoot{}
+%\fancyfoot[C]{\it{Find me at: \href{\src}{\src}}}
+\cfoot{\makebox[\textwidth][c]{\it{Find me at: \href{\src}{\src}}}}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
@@ -97,11 +98,15 @@
 \def\mobile{+44 7425 858825}
 %\def\mobile{+2779 999 5753}
 \def\website{https://www.linkedin.com/in/marcell-nagy-83b8a1a9/}
+\def\src{https://github.com/262882/resume}
+\def\repo{https://github.com/marcelldls}
+\def\nation{HUN, RSA, UK Settled}
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
   \textbf{\href{\website}{\Large \name}} & Email: \href{mailto:\email}{\email}\\
   \href{\website}{\website} & Mobile: \href{tel:\mobile}{\mobile} \\
+  \href{\repo}{\repo} & Nationality: \nation \\
 \end{tabular*}
 
 
@@ -112,7 +117,7 @@
       {MSc Computer Science (Robotics)} {University Of The Witwatersrand}
       {Graduation with distinction, Postgraduate Merit Award (2022, 2023)}{Jan. 2022 -- Dec. 2023}
     \resumeSubheading
-      {CEng Chartered Engineer} {Institution of Mechanical Engineers}
+      {Chartered Engineer} {Institution of Mechanical Engineers}
       {}{Awarded Oct. 2021}
     \resumeSubheading
       {BEng Mechanical Engineering}{University Of Pretoria}
@@ -129,7 +134,7 @@
 
     \resumeSubheading
       {Diamond Light Source}{Harwell Science Campus, UK}
-      {Software Systems Engineer: Beamline Controls Core Developments Team}{May 2023 - Present}
+      {Software Systems Engineer: Beamline Controls Core Development Team}{May 2023 - Present}
       \resumeItemListStart
         \resumeItem{Description}
           {The design, development, commissioning and operational support of software and distributed control systems to support the development and operations of the beamlines of the synchrotron}
@@ -198,8 +203,6 @@
     \resumeSubItem{Innovative Delta Robot Sample Scanner}
       {Coauthor -- Journal of Physics: Conference Series, Volume 2380, 2022}
   \resumeSubHeadingListEnd
-
-
 
 %
 %--------PROGRAMMING SKILLS------------
