@@ -1,0 +1,24 @@
+name: Code CI
+on: [push, pull_request]
+jobs:
+  Build_Release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Build
+        run: |
+          docker run \
+          -v $(pwd):/source \
+          ghcr.io/xu-cheng/texlive-full:latest \
+          /bin/bash -c "make -C /source/"
+      - name: Store
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: "*.pdf"
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: "*.pdf"
