@@ -1,0 +1,183 @@
+%-------------------------
+% Resume in Latex
+% Author : Saumitra Kumar
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+    \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+    \item\small{
+            {#1 \vspace{-2pt}}
+    }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & #2 \\
+        \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+    \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & #2 \\
+        \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{\href{http://sourabhbajaj.com/}{\Large Jyoti Dhyani}} & Email : \href{mailto:jdhyani@expediagroup.com}{jdhyani@expediagroup.com}\\
+\href{https://www.linkedin.com/in/jyoti-dhyani-308511139/}{LinkedIn} & Mobile : \href{tel:+08826775441}{+91-8826775441} \\
+\end{tabular*}
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Expedia Group}{Gurgaon}
+{Software Development Engineer III}{Oct 2021 – Current}
+\resumeItemListStart
+\resumeItem{Integrated OneKey points for the Activities shopping path, leading to a 15\% increase in conversion rates and a 20\% boost in revenue.}
+\resumeItem{Spearheaded the migration of Activities PDP components into shared-ui following the SDUI approach, resulting in a 20\% reduction in code duplication and a 30\% improvement in development time.}
+\resumeItem{Developed and delivered cross-selling activities on Hotels PDP, contributing to a \$500k increase in quarterly revenue and a 10\% increase in customer engagement metrics.}
+\resumeItem{Led a session in the EG India UI community sync on developing a new component in shared-ui for Activities SRP, facilitating knowledge sharing and collaboration across teams.}
+\resumeItem{Created and maintained monitoring dashboards and alerts for the activities experience layer and PWA using Datadog, leading to a 20\% decrease in system downtime and a 15\% improvement in response time.}
+\resumeItem{Introduced caching in GHA workflows, reducing build times by 30\% and improving developer productivity.}
+\resumeItem{Integrated renovate to automate dependency updates, resulting in a 50\% reduction in manual maintenance efforts and a 20\% decrease in dependency-related issues.}
+\resumeItemListEnd
+
+\resumeSubheading
+{InfoEdge}{Delhi}
+{Senior Front End Engineer}{Nov 2019 – Oct 2021}
+\resumeItemListStart
+\resumeItem{Established a CI/CD pipeline in Github, automating code checks, testing, and deployment to facilitate a seamless development lifecycle.}
+\resumeItem{Configured webpack and babel to generate optimized builds for modern and legacy browsers, resulting in a 25\% reduction in bundle size and a 20\% improvement in page load times on modern browsers.}
+\resumeItem{Successfully delivered multiple frontend projects using ReactJS, Redux, and JavaScript, ensuring timely delivery and receiving positive feedback from stakeholders.}
+\resumeItem{Conducted comprehensive unit testing of React components using jest and enzyme, achieving a 90\% test coverage rate and reducing production bugs by 30\%.}
+\resumeItem{Implemented industry best practices for UI development, emphasizing reusable, mobile-first, and responsive design principles using Bootstrap and ReactJS, resulting in a 20\% increase in mobile traffic and a 15\% improvement in user engagement metrics.}
+\resumeItem{Implemented data-driven A/B tests to evaluate the effectiveness of new product page designs and inform decision-making processes.}
+\resumeItemListEnd
+
+
+\resumeSubheading
+{NIIT Technologies}{Delhi}
+{Software Developer}{Aug 2017 – Nov 2019}
+\resumeItemListStart
+\resumeItem{Translated Figma designs into HTML, CSS, and JavaScript in collaboration with the product team and UX designers, enhancing the design and functionality of the product.}
+\resumeItem{Migrated the site to a self-documenting, isolated, and testable JavaScript framework, simplifying development processes and facilitating collaboration among developers.}
+\resumeItem{Developed UI with a focus on reusable, mobile-first, and responsive design principles using Bootstrap and ReactJS, resulting in improved user experience and engagement.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+%\section{Projects}
+%\resumeSubHeadingListStart
+%\resumeSubItem{QuantSoftware Toolkit}
+%{Open source python library for financial data analysis and machine learning for finance.}
+%\resumeSubItem{Github Visualization}
+%{Data Visualization of Git Log data using D3 to analyze project trends over time.}
+%\resumeSubItem{Recommendation System}
+%{Music and Movie recommender systems using collaborative filtering on public datasets.}
+%\resumeSubItem{Mac Setup}
+%{Book that gives step by step instructions on setting up developer environment on Mac OS.}
+%\resumeSubHeadingListEnd
+
+%
+%--------PROGRAMMING SKILLS------------
+\section{Programming Skills}
+\resumeSubHeadingListStart
+\item{
+\textbf{Frontend Technologies}{: React.js, Redux, JavaScript, GraphQL, HTML5, CSS3, SASS}
+}
+\item{
+\textbf{Testing Frameworks}{: Cypress, Jest, Enzyme, Testing Library}
+}
+\item{
+\textbf{Monitoring \& Logging}{: Splunk, Datadog, Apollo Studio}
+}
+\item{
+\textbf{Cloud \& DevOps}{: Docker, Kubernetes, AWS}
+}
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Indira Gandhi Delhi Technical University}{Delhi, India}
+{Bachelor of Technology, Information Technology;  GPA: 4.00}{Aug. 2013 -- June. 2017}
+\resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
