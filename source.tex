@@ -89,24 +89,24 @@
 % COLOR THEMES SELECTION
 
 % For Light theme un-comment this and comment the Dark theme section below
-\colorlet{textcolor}{black}
-\colorlet{urlcolor}{blue}
-\newcommand{\otherThemeRef}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_dark.pdf}{ Dark \color{urlcolor}{\faicon{lightbulb-o}}}}
-\newcommand{\latestVersion}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_light.pdf}{Latest \color{urlcolor}{\faicon{refresh}}}}
+% \colorlet{textcolor}{black}
+% \colorlet{urlcolor}{blue}
+% \newcommand{\otherThemeRef}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_dark.pdf}{ Dark \color{urlcolor}{\faicon{lightbulb-o}}}}
+% \newcommand{\latestVersion}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_light.pdf}{Latest \color{urlcolor}{\faicon{refresh}}}}
 
-\begin{document}
+% \begin{document}
 % ---
 
 % For Dark theme un-comment this and comment the Light theme section above
-% \colorlet{textcolor}{white!80!gray}
-% \colorlet{backgroundcolor}{black!30!gray}
-% \colorlet{urlcolor}{blue!25!white}
-% \AtBeginDocument{\color{textcolor}}
-% \newcommand{\otherThemeRef}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_light.pdf}{Light \color{urlcolor}{\faicon{lightbulb-o}}}}
-% \newcommand{\latestVersion}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_dark.pdf}{Latest \color{urlcolor}{\faicon{refresh}}}}
+\colorlet{textcolor}{white!80!gray}
+\colorlet{backgroundcolor}{black!30!gray}
+\colorlet{urlcolor}{blue!25!white}
+\AtBeginDocument{\color{textcolor}}
+\newcommand{\otherThemeRef}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_light.pdf}{Light \color{urlcolor}{\faicon{lightbulb-o}}}}
+\newcommand{\latestVersion}{\href{https://github.com/wilmeragsgh/resume/raw/master/wilmer_gonzalez_dark.pdf}{Latest \color{urlcolor}{\faicon{refresh}}}}
 
-% \begin{document}
-% \pagecolor{backgroundcolor}
+\begin{document}
+\pagecolor{backgroundcolor}
 % ---
 
 % HEADING
@@ -127,9 +127,10 @@
       {Machine learning engineer}{May 2023 - Present}
       \resumeItemListStart
       \resumeItem{Enable usage of industry data and models to enhance financial metrics for business owners.}
-      \resumeItem{Grown and categorize 1.7M brands to be used by customers.}
+      \resumeItem{Stablish MLOps practices and components across forecasting models.}
+      \resumeItem{Develop a full-stack LLM component using financial data to generate insights.}
       \resumeItemListEnd
-      \resumeTech{Technologies}{AWS, Python, BERT, OpenAI ChatGPT, Athena.}\\
+      \resumeTech{Technologies}{AWS, Python, Typescript, React, MLflow, LLMs, OpenAI ChatGPT, Athena.}\\
     %   \resumeTech{Theory}{Machine learning, AutoML, Feature engineering, Project management.}
     \sepsection
 
@@ -168,7 +169,8 @@
       \resumeItemListEnd
       \resumeTech{Technologies}{Python, R, Bash, Gephi, Power BI, REST API, Vue, Airflow, Kubernetes, Tensorflow, BERT, NLP, Data engineering, Data visualization, Workflow orchestration, Social networks analytics.}\\
     %   \resumeTech{Theory}{Topic modeling, Community detection, Network Analysis and NLP, Data visualization, Data engineering}
-    
+
+    \newpage
     \sepsection
 
     \resumeSubheading
@@ -183,10 +185,9 @@
       
     \sepsection
 
-    \newpage
     \resumeSubheading
       {Universidad Central de Venezuela}{Caracas, VE}
-      {Adjunct professor (Advanced topics in AI)}{October 2018 - June 2021}
+      {Adjunct professor (Advanced topics in AI)}{October 2018 - Present (seasonal)}
       \resumeItemListStart
       \resumeItem{Designed and organized course material and resources for topics described in \href{https://bit.ly/2VYchte}{\textsl{here}}.}
       \resumeItem{Lectured material for students and grade their assignments.}
@@ -228,16 +229,17 @@
 
     \resumeSubheading
       {Quash}{(remote) Caracas, VE}
-      {Machine learning engineer}{February 2019 - March 2020}
+      {Lead Machine learning engineer}{February 2019 - March 2020}
       \resumeItemListStart
-      \resumeItem{Developed a customer facing API for using our internal credit scoring model.}
+      \resumeItem{Developed a customer-facing API for using our internal credit scoring model.}
       \resumeItem{Increased approval rate by 15\% of customers while keeping the same risk by optimizing state-of-the-art ML models.}
       \resumeItemListEnd
       \resumeTech{Technologies}{Python, R, S3 and Docker.}\\
     %   \resumeTech{Theory}{Credit scoring and Hyper-parameter optimization.}
 
     \sepsection
-
+    \newpage
+    
     \resumeSubheading
       {Advoqt}{(remote) Caracas, VE}
       {Machine learning engineer}{February - August, 2019}
@@ -248,7 +250,6 @@
     %   \resumeTech{Theory}{Deep learning and Text classification.}
 
     \sepsection
-    \newpage
     \resumeSubheading
       {Fetcher}{Caracas, VE}
       {Data scientist}{June 2018 - February 2019}
