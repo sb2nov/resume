@@ -1,6 +1,6 @@
 %-------------------------
 % Resume in Latex
-% Author : Sourabh Bajaj
+% Author : Vrushali Chaudhari
 % License : MIT
 %------------------------
 
@@ -86,125 +86,174 @@
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
-%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
 
 %----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-  \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : \href{tel:+11234567890}{+1-123-456-7890} \\
-\end{tabular*}
+\begin{center}
+    {\Huge \scshape Vrushali Chaudhari} \\ \vspace{1pt}
+   \small \href{tel:}{ \raisebox{-0.1\height}\faPhone\ \underline{+91-9096102207} ~} \href{mailto:chaudharivrushali20@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{chaudharivrushali20@gmail.com}} ~ 
+    \href{https://www.linkedin.com/in/vrushali-chaudhari-b161301a1/}{\raisebox{-0.2\height}\faLinkedinSquare\ \underline{Linkedin}}  ~
+    \href{https://github.com/Vru2614}{\raisebox{-0.2\height}\faGithub\ \underline{Github}} ~
+   
+\end{center}
+ \vspace{0.5mm}
 
 
 %-----------EDUCATION-----------------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Master of Science in Computer Science;  GPA: 4.00}{Aug. 2012 -- Dec. 2013}
-    \resumeSubheading
-      {Birla Institute of Technology and Science}{Pilani, India}
-      {Bachelor of Engineering in Electrical and Electronics;  GPA: 3.66 (9.15/10.0)}{Aug. 2008 -- July. 2012}
+        {Priyadarshini Institute of Engineering and Technology, Nagpur}{2018 – 2021}
+      {Bachelor of Engineering - Electrical Engineering) - \textbf{CGPA} - \textbf{8.17}}{Nagpur, Maharashtra}
   \resumeSubHeadingListEnd
+  
+%   \resumeSubHeadingListStart
+%     \resumeSubheading
+%       {College Name}{MM YYYY -- MM YYYY}
+%       {Exam Name - Course Name  - \textbf{Percentage} - \textbf{xx\%}}{city, country}
+%   \resumeSubHeadingListEnd
 
+%------RELEVANT COURSEWORK-------
+\section{COURSEWORK / SKILLS}
+    %\resumeSubHeadingListStart
+        \begin{multicols}{4}
+            \begin{itemize}[itemsep=-2pt, parsep=5pt]
+                \item Data Structure and Algorithms (DSA)
+                \item Database Management System (DBMS)
+                \item Operating Systems
+                \item Oops Concepts
+                \item Software Engineering
+                \item Java
+            \end{itemize}
+        \end{multicols}
+        \vspace*{2.0\multicolsep}
+    %\resumeSubHeadingListEnd
 
-%-----------EXPERIENCE-----------------
-\section{Experience}
-  \resumeSubHeadingListStart
+%-------------Experience-----------
+\section{EXPERIENCE}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
 
-    \resumeSubheading
-      {Google}{Mountain View, CA}
-      {Software Engineer}{Oct 2016 - Present}
-      \resumeItemListStart
-        \resumeItem{Tensorflow}
-          {TensorFlow is an open source software library for numerical computation using data flow graphs; primarily used for training deep learning models. Worked on APIs and performance for training models on Tensor Processing Units (TPU).}
-        \resumeItem{Apache Beam}
-          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines, as well as a set of language-specific SDKs for constructing pipelines and runners.}
-      \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{\large{\underline{\textbf{Backend Developer at Amla Commerce}}}} \raisebox{-0.1\height}\  $|$ \large{\underline{Java,SpringBoot,MySQL,Microservices}}}{Aug 2018 - Present}\\
+          \resumeItemListStart
+             \resumeItem{\normalsize{Learned and Implemented \textbf{Java, SpringBoot,MySQL,Microservices,REST APIs}}}
+            \resumeItem{\normalsize{Working as Backend Developer in the Staples Team for the providing customized business solutions.}}
+            \resumeItem{\normalsize{Developed Project using web API Service by Publishing Products and Catalog which plays an important role for B2B orders and business.}}
+            \resumeItem{\normalsize{Working with REST API along with MVC pattern, integrating API in class library and testing manually in postman API tool.}}
+            \resumeItem{\normalsize{Worked on interface and Low-Level Designing.}}
+            \resumeItem{\normalsize{Write, modify, and maintain software documentation and specification.}}
+            \resumeItem{\normalsize{Reviewing all code changes and test results.}}
+            \resumeItem{\normalsize{Code reviewed for better performance and handled client calls.}}
+            \resumeItem{\normalsize{Developed Backend APIs for the internal project that is the Assist Portal using Java and SpringBoot.}}
+         
+          \resumeItemListEnd
+          \vspace{-5pt}
+          
+          
+    \resumeSubHeadingListEnd
+
+          
+          
+    \resumeSubHeadingListEnd
+\vspace{-2pt}
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+          \vspace{5pt}
+          \resumeProjectHeading
+          {\textbf{\large{\underline{Book My Show}}} \href{Project Link}{\raisebox{-0.1\height} } $|$ \large{\underline{Java, SpringBoot,LLD, MySQL, JPA}}}\\
+          \resumeItemListStart
+            \resumeItem{\normalsize{A Demo Springboot project made by designing schema and connecting app with MySQL by creeating tables in it. In this project razorpay is used to make payments. Also partial payments and gift cards supported along with cancellation and refund.}}
+         
+          \resumeItemListEnd 
+          \vspace{-10pt}
+          
+          
+           \resumeSubHeadingListStart
+          \vspace{2pt}
+          \resumeProjectHeading
+          {\textbf{\large{\underline{Parking Lot}}} \href{Project Link}{\raisebox{-0.1\height} } $|$ \large{\underline{Java, SpringBoot, LLD, MySQL}}}\\
+          \resumeItemListStart
+            \resumeItem{\normalsize{This Project is based on implementation of generating tickets, invoice and make payments.It consist all CRUD operation. It supports multiple type of vehicles with multiple spots to park and the issued ticket to the usser will contain vheicle number, vehicle type, time of entry and assigned parking spot.}}
+         
+          \resumeItemListEnd 
+          \vspace{5pt}
       
-% --------Multiple Positions Heading------------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%    \resumeSubHeadingListEnd
-%-------------------------------------------
-
-    \resumeSubheading
-      {Coursera}{Mountain View, CA}
-      {Senior Software Engineer}{Jan 2014 - Oct 2016}
-      \resumeItemListStart
-        \resumeItem{Notifications}
-          {Service for sending email, push and in-app notifications. Involved in features such as delivery time optimization, tracking, queuing and A/B testing. Built an internal app to run batch campaigns for marketing etc.}
-        \resumeItem{Nostos}
-          {Bulk data processing and injection service from Hadoop to Cassandra and provides a thin REST layer on top for serving offline computed data online.}
-        \resumeItem{Workflows}
-          {Dataduct an open source workflow framework to create and manage data pipelines leveraging reusables patterns to expedite developer productivity.}
-        \resumeItem{Data Collection}
-          {Designed the internal survey and crowd sourcing platform which allowed for creating various tasks for crowd sourcing or embedding surveys across the Coursera platform.}
-        \resumeItem{Dev Environment}
-          {Analytics environment based on docker and AWS, standardized the python and R dependencies. Wrote the core libraries that are shared by all data scientists.}
-        \resumeItem{Data Warehousing}
-          {Setup, schema design and management of Amazon Redshift. Built an internal app for access to the data using a web interface. Dataduct integration for daily ETL injection into Redshift.}
-        \resumeItem{Recommendations}
-          {Core service for all recommendation systems at Coursera, currently used on the homepage and throughout the content discovery process. Worked on both offline training and online serving.}
-        \resumeItem{Content Discovery}
-          {Improved content discovery by building a new onboarding experience on coursera. Using this to personalize the search and browse experience. Also worked on ranking and indexing improvements.}
-        \resumeItem{Course Dashboards}
-          {Instructor dashboards and learner surveying tools, which helped instructors run their class better by providing data on Assignments and Learner Activity.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Lucena Research}{Atlanta, GA}
-      {Data Scientist}{Summer 2012 and 2013}
-      \resumeItemListStart
-        \resumeItem{Portfolio Management}
-          {Created models for portfolio hedging,  portfolio optimization and price forecasting. Also creating a strategy backtesting engine used for simulating and backtesting strategies.}
-        \resumeItem{QuantDesk}
-          {Python backend for a web application used by hedge fund managers for portfolio management.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Research and Teaching Assistant}{Jan 2012 - Dec 2013}
-      \resumeItemListStart
-        \resumeItem{Research Assistant - Machine Learning}
-          {Research on machine learning for portfolio hedging and replication algorithms. Modeling low-risk \& continuous-return strategies. Developed the python library QSTK.}
-        \resumeItem{Teaching Assistant - Computational Investing}
-          {The online course on Coursera, had more than 100,000 students enrolled. It was featured on the 11 Alive News and the Atlanta Journal Constitution. Involved in creating assignment, exams and conducting recitation sessions. Also taught the on-campus version of the course.}
-      \resumeItemListEnd
-
-  \resumeSubHeadingListEnd
-
-
-%-----------PROJECTS-----------------
-\section{Projects}
-  \resumeSubHeadingListStart
-    \resumeSubItem{QuantSoftware Toolkit}
-      {Open source python library for financial data analysis and machine learning for finance.}
-    \resumeSubItem{Github Visualization}
-      {Data Visualization of Git Log data using D3 to analyze project trends over time.}
-    \resumeSubItem{Recommendation System}
-      {Music and Movie recommender systems using collaborative filtering on public datasets.}
-    \resumeSubItem{Mac Setup}
-      {Book that gives step by step instructions on setting up developer environment on Mac OS.}
-  \resumeSubHeadingListEnd
+          
+        % \resumeProjectHeading
+        %   {\href{https://github.com/FusionIIIT/Fusion/tree/main/FusionIIIT/applications/counselling_cell}{\textbf{\large{\underline{Counselling Cell - \textbf{Fusion IIIT}}}} \href{Project Link}{\raisebox{-0.1\height}\faExternalLink }} $|$ \large{\underline{HTML, CSS, Django, PostgreSQL}}}{2021-22}
+        %   \resumeItemListStart
+        %      \resumeItem{\normalsize{Develop the \textbf{front-end} of Counselling Cell module in Fusion IIIT.}}
+        %     \resumeItem{\normalsize{Module Consists of 4-5 different types of users with different functionalities.}}
+        %     \resumeItem{\normalsize{Added \textbf{10-12 new features} like organize the user interface of the Module's \textbf{Home Page}}}
+        %     \resumeItem{\normalsize{Handle the database and integrated the module with other existing modules.}}
+        %   \resumeItemListEnd
+        %   \vspace{-13pt}
+          
+    
+\vspace{-12pt}
 
 %
-%--------PROGRAMMING SKILLS------------
-%\section{Programming Skills}
-%  \resumeSubHeadingListStart
-%    \item{
-%      \textbf{Languages}{: Scala, Python, Javascript, C++, SQL, Java}
-%      \hfill
-%      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
-%    }
-%  \resumeSubHeadingListEnd
 
 
-%-------------------------------------------
-\end{document}
+%-----------EXPERIENCE-----------
+% \section{INTERNSHIP}
+%   \resumeSubHeadingListStart
+
+%     \resumeSubheading
+%       {Company Name \href{certificate Link}{\raisebox{-0.1\height}\faExternalLink }}{MM YYYY -- MM YYYY} 
+%       {\underline{Role Name}}{city, country}
+%       \resumeItemListStart
+%         \resumeItem{\normalsize{About the role \textbf{and responsibilities carried out.}}}
+  
+%       \resumeItemListEnd  
+%   \resumeSubHeadingListEnd
+% \vspace{-12pt}
+%-----------PROGRAMMING SKILLS-----------
+\section{TECHNICAL SKILLS}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{\normalsize{Languages:}}{  \normalsize{Core Java, MySQL}} \\
+     \textbf{\normalsize{Technologies/Frameworks:}}{  \normalsize{SpringBoot,Hibernate,Microservices,REST APIs,Spring,Data Structures And Algorithms}} \\
+     \textbf{\normalsize{Developer Tools:}}{  \normalsize{VS Code, Visual Studio, IntelliJ, Postman, AIO, GitHub, Jenkins, JUnit }} \\
+    }}
+ \end{itemize}
+ \vspace{-15pt}
+
+
+
+ 
+  %-----------CERTIFICATIONS---------------
+\section{CERTIFICATIONS}
+
+$\sbullet[.75] \hspace{0.2cm}${{Advanced Java and DSA (Scaler Academy}}\hspace{1.6cm}\\
+$\sbullet[.75] \hspace{0.2cm}${Java Programming(Solo Learn)} \hspace{1cm}\\
+
+
+
+
+ \section{Achievements}
+    \resumeSubHeadingListStart
+        % \resumeSubheading{Organization Name \href{Certificate Proof link}{\raisebox{-0.1\height}\faExternalLink } }{05-2021 -- 12-2021}{\underline{Role}}{Location}
+        
+            \resumeItemListStart
+                \resumeItem{\normalsize{5 Star Problem Solving on HackerRank}
+                 \resumeItem{\normalsize{5 Star Java Programming on HackerRank}
+                  \resumeItem{\normalsize{5 Star SQL Programming on HackerRank}
+}
+
+                
+
+ 
+ }}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+ \vspace{-11pt}
+ 
+ \end{document}
