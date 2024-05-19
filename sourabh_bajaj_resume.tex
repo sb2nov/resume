@@ -17,6 +17,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{fontawesome}
 \input{glyphtounicode}
 
 \pagestyle{fancy}
@@ -92,22 +93,17 @@
 \begin{document}
 
 %----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-  \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : \href{tel:+11234567890}{+1-123-456-7890} \\
-\end{tabular*}
+\begin{tabularx}{\textwidth}{Xr}
+  \textbf{\Large Sourabh Bajaj} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+  & Mobile : \href{tel:+11234567890}{+1-123-456-7890} \\
+  & \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com}\\
+  & \href{https://www.linkedin.com/in/sourabhbajaj}{\faLinkedinSquare} \href{https://www.github.com/sourabhbajaj}{\faGithub} \\
+\end{tabularx}
+
+\noindent
 
 
-%-----------EDUCATION-----------------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Master of Science in Computer Science;  GPA: 4.00}{Aug. 2012 -- Dec. 2013}
-    \resumeSubheading
-      {Birla Institute of Technology and Science}{Pilani, India}
-      {Bachelor of Engineering in Electrical and Electronics;  GPA: 3.66 (9.15/10.0)}{Aug. 2008 -- July. 2012}
-  \resumeSubHeadingListEnd
+
 
 
 %-----------EXPERIENCE-----------------
@@ -204,7 +200,16 @@
 %      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
 %    }
 %  \resumeSubHeadingListEnd
-
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Georgia Institute of Technology}{Atlanta, GA}
+      {Master of Science in Computer Science;  GPA: 4.00}{Aug. 2012 -- Dec. 2013}
+    \resumeSubheading
+      {Birla Institute of Technology and Science}{Pilani, India}
+      {Bachelor of Engineering in Electrical and Electronics;  GPA: 3.66 (9.15/10.0)}{Aug. 2008 -- July. 2012}
+  \resumeSubHeadingListEnd
 
 %-------------------------------------------
 \end{document}
