@@ -1,12 +1,15 @@
-FROM ubuntu:noble
+FROM debian:stable-slim
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update -q && apt-get install -qy \
-    curl jq \
-    texlive-full \
+RUN echo "deb http://deb.debian.org/debian stable main" > /etc/apt/sources.list && \
+    echo "deb http://deb.debian.org/debian stable-updates main" >> /etc/apt/sources.list && \
+    echo "deb http://deb.debian.org/debian-security stable-security main" >> /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get install -qyf \
+    curl jq make git \
     python3-pygments gnuplot \
-    make git \
-    && rm -rf /var/lib/apt/lists/*
+    texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
+RUN rm -rf /var/lib/apt/lists/*
 
 WORKDIR /data
 VOLUME ["/data"]
