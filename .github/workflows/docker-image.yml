@@ -21,6 +21,6 @@ jobs:
           run: |
             cd data
             pdflatex sourabh_bajaj_resume.tex
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Apply pdflatex changes
