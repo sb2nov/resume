@@ -19,7 +19,7 @@
 %% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/simpleicons for full list of symbols.
 
 % Change the page layout if you need to
-\geometry{left=0.75cm,right=0.75cm,top=0.5cm,bottom=0.5cm,columnsep=0.2cm}
+\geometry{left=0.6cm,right=0.6cm,top=1cm,bottom=0.6cm,columnsep=0.4cm}
 
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
@@ -96,24 +96,16 @@
 % \usepackage{academicons}\let\faOrcid\aiOrcid
 \begin{document}
 \name{Simanga H. Khoza}
-\tagline{Your Position or Tagline Here}
+\tagline{Intermidate .NET Software Developer}
 %% You can add multiple photos on the left or right
 % \photoR{2.8cm}{Globe_High}
 % \photoL{2.5cm}{Yacht_High,Suitcase_High}
 
 \personalinfo{%
-  % \email{h3khoza@gmail.com}
-  % \phone{0812490306}
-  %
-  % \homepage{www.homepage.com}
-  % \location{Pretoria, Gauteng, RSA }
-  %
-  % \linkedin{simanga}
-  % \github{simanga-dev}
 
-  \begin{tabular}{ c c c }
-   cell1 & cell2 & cell3 \\
-   cell4 & cell5 & cell6 \\
+  \begin{tabular}{ l l l }
+   \email{h3khoza@gmail.com} & \homepage{www.homepage.com} & \linkedin{simanga} \\
+   \phone{0812490306} & \location{Pretoria, Gauteng, RSA } & \github{simanga-dev} \\
   \end{tabular}
 
 }
@@ -187,6 +179,34 @@ A short abstract would also work.
 % ONLY the current column
 \newpage
 
+\cvsection{Education}
+
+\cvevent{Ph.D.\ in Your Discipline}{Your University}{Sept 2002 -- June 2006}{}
+Thesis title: Wonderful Research
+
+\divider
+
+\cvevent{M.Sc.\ in Your Discipline}{Your University}{Sept 2001 -- June 2002}{}
+
+\divider
+
+\cvevent{B.Sc.\ in Your Discipline}{Stanford University}{Sept 1998 -- June 2001}{}
+
+% \divider
+
+
+\cvsection{Referees}
+
+% \cvref{name}{email}{mailing address}
+\cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
+{Address Line 1\\Address line 2}
+
+\divider
+
+\cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
+{Address Line 1\\Address line 2}
+
+
 \cvsection{Publications}
 
 %% Specify your last name(s) and first name(s) as given in the .bib to automatically bold your own name in the publications list.
@@ -210,15 +230,6 @@ A short abstract would also work.
 
 \printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
 
-%% Switch to the right column. This will now automatically move to the second
-%% page if the content is too long.
-\switchcolumn
-
-\cvsection{SKILLS}
-
-\begin{quote}
-``Something smart or heartfelt, preferably in one sentence.''
-\end{quote}
 
 \cvsection{Most Proud of}
 
@@ -234,11 +245,22 @@ A short abstract would also work.
 
 \cvsection{Strengths}
 
-% Don't overuse these \cvtag boxes — they're just eye-candies and not essential. If something doesn't fit on a single line, it probably works better as part of an itemized list (probably inlined itemized list), or just as a comma-separated list of strengths.
 
-% The `ragged2e` document class option might cause automatic linebreaks between \cvtag to fail.
-% Either remove the ragged2e option; or
-% add \LaTeXraggedright in the paragraph for these \cvtag
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{SKILLS}
+
+\begin{itemize}
+\item Strong communication and teamwork skills.
+\item Excellent problem-solving skills
+\end{itemize}
+
+
+\divider
+
+{\large{Programming Languages}\par}
+
 {\LaTeXraggedright
 \cvtag{Hard-working}
 \cvtag{Eye for detail}
@@ -252,46 +274,6 @@ A short abstract would also work.
 \cvtag{Embedded Systems}\\
 \cvtag{Statistical Analysis}
 
-\cvsection{Languages}
-
-\cvskill{English}{5}
-\divider
-
-\cvskill{Spanish}{4}
-\divider
-
-\cvskill{German}{3.5} %% Supports X.5 values.
-
-%% Yeah I didn't spend too much time making all the
-%% spacing consistent... sorry. Use \smallskip, \medskip,
-%% \bigskip, \vspace etc to make adjustments.
-\medskip
-
-\cvsection{Education}
-
-\cvevent{Ph.D.\ in Your Discipline}{Your University}{Sept 2002 -- June 2006}{}
-Thesis title: Wonderful Research
-
-\divider
-
-\cvevent{M.Sc.\ in Your Discipline}{Your University}{Sept 2001 -- June 2002}{}
-
-\divider
-
-\cvevent{B.Sc.\ in Your Discipline}{Stanford University}{Sept 1998 -- June 2001}{}
-
-% \divider
-
-\cvsection{Referees}
-
-% \cvref{name}{email}{mailing address}
-\cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
-{Address Line 1\\Address line 2}
-
-\divider
-
-\cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
-{Address Line 1\\Address line 2}
 
 
 \end{paracol}
