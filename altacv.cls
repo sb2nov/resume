@@ -315,26 +315,38 @@
   {\color{subheading}\cvsubsectionfont{#1}\par}\medskip
 }
 
-% v1.1.4: fixes inconsistent font size
-% v1.7: adds accsupp ActualText for location and date markers
 \newcommand{\cvevent}[4]{%
-  {\large\color{emphasis}#1\par}
-  \smallskip\normalsize
-  \ifstrequal{#2}{}{}{
-  \textbf{\color{accent}#2}\par
-  \smallskip}
+  \noindent
+  {\large\color{emphasis}\textbf{#1}\hfill}%
+  \ifstrequal{#2}{}{}{%
+    \textit{#2}\par%
+  % \medskip\normalsize
+  }%
   \ifstrequal{#3}{}{}{%
-    {\small\makebox[0.5\linewidth][l]%
-      {\BeginAccSupp{method=pdfstringdef,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
-      ~#3}%
-    }}%
+    {\textbf{\color{accent}\large{#3}\hfill}}%
+  }%
   \ifstrequal{#4}{}{}{%
-    {\small\makebox[0.5\linewidth][l]%
-      {\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
-        ~#4}%
-    }}\par
+    \textit{#4}%
+  }%
   \medskip\normalsize
 }
+
+
+
+% \newcommand{\cvevent}[4]{%
+%   {\large\color{emphasis}\textbf{#1}\hfill}
+%   \ifstrequal{#3}{}{}{%
+%     {\textit{~#3}} \par}%
+% % \smallskip\normalsize
+% \ifstrequal{#2}{}{}{
+%     \textbf{\color{accent}\large{#2}}\hfill
+%   % \smallskip
+% }
+%   \ifstrequal{#4}{}{}{%
+%       \textbf{~#4}%
+%     }\par
+%   \medskip\normalsize
+% }
 
 % v1.7: adds accsupp for the icon as well
 \newcommand{\cvachievement}[3]{%
