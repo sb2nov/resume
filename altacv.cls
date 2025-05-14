@@ -70,7 +70,7 @@
     \ifluatex\tutextrue\else\tutexfalse\fi
   \fi
 }{}
-\iftutex 
+\iftutex
   \RequirePackage{fontspec}
 \else
   %% v1.3.2 attempts to make ligatures
@@ -157,7 +157,7 @@
 %% v1.6: Use accsupp so that when copying/pasting the icon from PDF to a text
 %%       file, the icon name is pasted
 %% v1.7: Some tweaks/corrections so that accsupp is for icons only
-%% v1.7.1: Bugfix to support some symbol commands e.g. academicons commands 
+%% v1.7.1: Bugfix to support some symbol commands e.g. academicons commands
 \ExplSyntaxOn
 \NewDocumentCommand{\printinfo}{m m o}{%
   \IfNoValueTF{#3}{%
@@ -295,7 +295,7 @@
     \medskip
     {\taglinefont\color{tagline}\@tagline\par}
     \medskip
-    {\personalinfofont\@personalinfo\par}
+    {\@personalinfo\par}
     \end{minipage}\hfill%
     \altacv@right@photos\par%
   \endgroup\medskip
@@ -471,7 +471,7 @@
     }%
     \iftoggle{boldname}{\textbf{##1}}{##1}%
   }%
-% 
+%
   \renewcommand*{\mkbibnamegiven}[1]{%
     \global\togglefalse{boldname}%
     \foreach \my@fname / \my@gname in \my@namelist{%
