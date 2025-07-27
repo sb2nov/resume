@@ -17,6 +17,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{fontawesome5} % for using icons
 \input{glyphtounicode}
 
 \pagestyle{fancy}
@@ -79,6 +80,8 @@
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
 
 \renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSimpleItem}[1]{item\small{{#1 \vspace{-5pt}}}} % for items without an initial prefix heading
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
