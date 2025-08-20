@@ -1,284 +1,401 @@
-%%%%%%%%%%%%%%%%%
-% This is an sample CV template created using altacv.cls
-% (v1.7.2, 28 August 2024) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
-%
-%% It may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License, either version 1.3
-%% of this license or (at your option) any later version.
-%% The latest version of this license is in
-%%    http://www.latex-project.org/lppl.txt
-%% and version 1.3 or later is part of all distributions of LaTeX
-%% version 2003/12/01 or later.
-%%%%%%%%%%%%%%%%
+\documentclass[10pt, letterpaper]{article}
 
-%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
-% \documentclass[10pt,a4paper,normalphoto]{altacv}
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=2 cm, % seperation between body and page edge from the top
+    bottom=2 cm, % seperation between body and page edge from the bottom
+    left=2 cm, % seperation between body and page edge from the left
+    right=2 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={John Doe's CV},
+    pdfauthor={John Doe},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
 
-\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
-%% AltaCV uses the fontawesome5 and simpleicons packages.
-%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/simpleicons for full list of symbols.
-
-% Change the page layout if you need to
-\geometry{left=0.6cm,right=0.6cm,top=1cm,bottom=0.6cm,columnsep=0.4cm}
-
-% The paracol package lets you typeset columns of text in parallel
-\usepackage{paracol}
-
-% Change the font if you want to, depending on whether
-% you're using pdflatex or xelatex/lualatex
-% WHEN COMPILING WITH XELATEX PLEASE USE
-% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
-\iftutex
-  % If using xelatex or lualatex:
-  \setmainfont{Roboto Slab}
-  \setsansfont{Lato}
-  \renewcommand{\familydefault}{\sfdefault}
-\else
-  % If using pdflatex:
-  \usepackage[rm]{roboto}
-  \usepackage[defaultsans]{lato}
-  % \usepackage{sourcesanspro}
-  \renewcommand{\familydefault}{\sfdefault}
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    % \usepackage[T1]{fontenc} % this breaks sb2nov
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
 \fi
 
-% Change the colours if you want to
-\definecolor{SlateGrey}{HTML}{2E2E2E}
-\definecolor{LightGrey}{HTML}{1d2021}
-\definecolor{DarkPastelRed}{HTML}{450808}
-\definecolor{PastelRed}{HTML}{8F0D0D}
-\definecolor{GoldenEarth}{HTML}{E7D192}
-\colorlet{name}{black}
-\colorlet{tagline}{PastelRed}
-\colorlet{heading}{DarkPastelRed}
-\colorlet{headingrule}{GoldenEarth}
-\colorlet{subheading}{PastelRed}
-\colorlet{accent}{PastelRed}
-\colorlet{emphasis}{SlateGrey}
-\colorlet{body}{LightGrey}
-
-% Change some fonts, if necessary
-\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
-\renewcommand{\personalinfofont}{\footnotesize}
-\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
-\renewcommand{\cvsubsectionfont}{\large\bfseries}
 
 
-% Change the bullets for itemize and rating marker
-% for \cvskill if you want to
-\renewcommand{\cvItemMarker}{{\small\textbullet}}
-\renewcommand{\cvRatingMarker}{\faCircle}
-% ...and the markers for the date/location for \cvevent
-% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
-% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+% Some settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0cm} % set column seperation
+\makeatletter
+\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small John Doe - Page \thepage{} of \pageref*{LastPage}}
+}{}{} % replace number by desired string
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.3 cm
+}{
+    % bottom space:
+    0.2 cm
+} % section title spacing
+
+\renewcommand\labelitemi{$\circ$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
 
 
-% If your CV/résumé is in a language other than English,
-% then you probably want to change these so that when you
-% copy-paste from the PDF or run pdftotext, the location
-% and date marker icons for \cvevent will paste as correct
-% translations. For example Spanish:
-% \renewcommand{\locationname}{Ubicación}
-% \renewcommand{\datename}{Fecha}
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
+    }}}%
+  }%
+}%
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
 
 
-%% Use (and optionally edit if necessary) this .tex if you
-%% want to use an author-year reference style like APA(6)
-%% for your publication list
-% \input{pubs-authoryear.tex}
-
-%% Use (and optionally edit if necessary) this .tex if you
-%% want an originally numerical reference style like IEEE
-%% for your publication list
-\input{pubs-num.tex}
-
-%% sample.bib contains your publications
-\addbibresource{sample.bib}
-% \usepackage{academicons}\let\faOrcid\aiOrcid
 \begin{document}
-\name{Simanga H. Khoza}
-\tagline{Intermidate .NET Software Developer}
-%% You can add multiple photos on the left or right
-% \photoR{2.8cm}{Globe_High}
-% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
 
-% https://www.linkedin.com/in/simanga/
+    \placelastupdatedtext
+    \begin{header}
+        \textbf{\fontsize{24 pt}{24 pt}\selectfont John Doe}
 
-\personalinfo{%
-  \begin{tabular}{ l l l }
-   \email{h3khoza@gmail.com} & \homepage{https://simanga.dev} & \linkedin{https://linkedin.com/in/simanga} \\
-   \phone{+27 81 249 0306} & \location{Pretoria, Gauteng, RSA } & \github{https://github.com/simanga-dev} \\
-  \end{tabular}
+        \vspace{0.3 cm}
 
-}
+        \normalsize
+        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Your Location}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{mailto:youremail@yourdomain.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}youremail@yourdomain.com}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{tel:+90-541-999-99-99}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}0541 999 99 99}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://yourwebsite.com/}{\color{black}{\footnotesize\faLink}\hspace*{0.13cm}yourwebsite.com}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/yourusername}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}yourusername}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://github.com/yourusername}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}yourusername}}%
+    \end{header}
 
-\makecvheader
-%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
-% \AtBeginEnvironment{itemize}{\small}
+    \vspace{0.3 cm - 0.3 cm}
 
-%% Set the left/right column width ratio to 6:4.
-\columnratio{0.75}
 
-% Start a 2-column paracol. Both the left and right columns will automatically
-% break across pages if things get too long.
-\begin{paracol}{2}
-
-\cvsection{OBJECTIVE}
-
-\begin{quote}
-``Experienced Software Engineer with over five years in designing,
-developing, testing, and deploying software applications. Skilled
-in C\#, .NET, SQL, HTML, CSS, \\ JavaScript, REST APIs, and Azure.
-Seeking a Software Engineer role to utilize expertise in full SDLC.''
-\end{quote}
-
-\cvsection{Experience}
-
-\cvevent{.NET Developer (Intermidate Software Engineer)}{July 2023 -- Present}{\href{https://expresspros.co.za/}{Express Employment Professionals}}{Pretoria, Centurion}
-
-\begin{itemize}
-  \item Created and maintained Azure DevOps pipeline for deploying a .NET Framework Web Form Application on IIS server
-  \item Implemented SQL queries to address business logic requirements on a SQL Server database in an on-premises environment.
-  \item Write C\# code using the ASP.NET Framework to fix bugs and enhance the payment system.
-  \item Integrated the Web Application with the Microsoft Graph API to read and send calendar invites for meetings, as well as sending emails.
-  \item Participated in Agile team collaboration, sprints, standups, and retrospectives
-  \item Designed RESTful APIs and integrated front-end and back-end components.
-  \item Developed SQL queries scripts for business analysis and data imports.
-  \item Implemented new features in C\#, .NET Core, Entity Framework
-  \item Participated in Agile team collaboration, sprints, standups, and retrospectives
-\end{itemize}
-
-\divider
-
-\cvevent{Junior Software Engineer (Fullstack)}{March 2021 -- June 2023}{\href{https://kriterion.ai/}{Kriterion AI}}{Pretoria, Broklyn}
-
-\begin{itemize}
-  \item Developed a REST API using FastAPI and BigQuery, leveraging Pydantic for model validation.odels
-  \item Automated CI/CD pipelines for unit and integration testing, deployment of the React web app, Nginx using Docker, GitLab Actions, and scripting.
-  \item Developed the company website using NextJS and Tailwind CSS.
-  \item Enhanced development using Tilt to easily start up the entire cluster locally.
-  \item Participated in Agile team collaboration, sprints, standups, and retrospectives
-  \item Participated in Agile team collaboration, sprints, standups, and retrospectives
-\end{itemize}
-
-\divider
-
-\cvevent{Software Developer Internship}{March 2020 - December 2020}{\href{https://www.copalcor.co.za/}{Copalcor PTY}}{Johannesburg,Gemiston}
-
-\begin{itemize}
-  \item Conducted tests to software to make sure they meet the standards.
-  \item Assisted in troubleshooting and resolving issues in existing software.
-  \item Participated in the full software development life cycle.
-  \item Worked closely with senior developers to learn industry best practices.
-\end{itemize}
-
-\newpage
-
-\cvsection{Education}
-
-\cvevent{N.Dip Computer Systems Engineering}{2018 -- 2021}{Tshwane University of Technology}{\href{https://github.com/simanga-dev/simanga-dev.github.io/blob/40c3be6e23f2a5a44615d7b048085a03802c4972/public/static/documents/NDip_Computer_Systems_PhasingOut_2022.pdf}{Link to all courses}}
-
-\begin{itemize}
-  \item Achieve 4 distinctions in Object-oriented Programming and Computer Skills.
-  \item Relevant Courses: Programming I and II (C++), Network Systems and Data Science (Python), OOP (C++), Database Principles, Algorithms and Data Structures I and II (C++)
-\end{itemize}
+    \section{Welcome to RenderCV!}
 
 
 
-\divider
+        
+        \begin{onecolentry}
+            \href{https://rendercv.com}{RenderCV} is a LaTeX-based CV/resume version-control and maintenance app. It allows you to create a high-quality CV or resume as a PDF file from a YAML file, with \textbf{Markdown syntax support} and \textbf{complete control over the LaTeX code}.
+        \end{onecolentry}
 
-\cvevent{Grade 12 (Matric)}{2013}{Sincobile Secondary School}{}
+        \vspace{0.2 cm}
 
-\begin{itemize}
-  \item Achive a distinction in Mathematics and level 6 and 5 in rest of the subjects
-\end{itemize}
-
-
-\cvsection{Projects}
-
-% \cvevent{Carpentry Shop - Web Application}{}{}{}
-%
-% \begin{itemize}
-%   \item Built using .Net 5 and deployed on a Linode Server
-%   \item Utilized Github Actions for seamless CI/CD
-%   \item Used PostgreSQL for data storage
-%   \item Utilized Entity Framework as ORM tool
-%   \item Designed to enable users to manage carpentry orders efficiently
-%   \item Features automatic email sending to the client upon order completion
-% \end{itemize}
-%
-% \cvtag{NextJS} \cvtag{Git} \cvtag{Docker} \cvtag{Github Actions}
-
-% \divider
-
-\medskip
-
-\cvevent{Matric Dashboard - Web Application}{}{}{}
-
-\begin{itemize}
-  \item Built using Next JS and deployed on a contambo VPN
-  \item Uses Github Action and Docker for seamless CI/CD
-  \item Data Stored on a SQlite database to reduce serer cost
-  \item I used Drizzly as an ORM tool for managing migrations.
-  \item Designed to enable users to stay updated on the trend of Matric Results in South Africa.
-  \item Features semantic and type tolerant search using MeiliSearch.
-\end{itemize}
-
-\cvtag{NextJS} \cvtag{Git} \cvtag{Docker} \cvtag{Github Actions}
-
-\medskip
-
-% % use ONLY \newpage if you want to force a page break for
-% % ONLY the current column
-% \newpage
-
-\cvsection{CERTIFICATIONS}
-
-\cvachievement{\faTrophy}{Azure DevOps Engineer Expert}{issued: 8/08/2021 \href{https://www.credly.com/badges/80f2454f-f8de-4e74-9575-a01edf459fde}{https://cutt.ly/DRI8NYP}}
-
-\divider
-
-\cvachievement{\faTrophy}{Azure Developer Associate}{issued: 8/06/2021 \href{https://www.credly.com/badges/2b9449fa-ea3c-4baa-9362-2b1c6f69636e}{https://cutt.ly/tRI4WYo}}
-
-\divider
-
-\cvachievement{\faTrophy}{Azure Fundamentals}{issued: 26/03/2021 \href{https://www.credly.com/badges/eb7f2969-df90-4138-b898-bcb9f57389e1}{https://cutt.ly/sRI3GgJ}}
+        \begin{onecolentry}
+            The boilerplate content was inspired by \href{https://github.com/dnl-blkv/mcdowell-cv}{Gayle McDowell}.
+        \end{onecolentry}
 
 
-%% page if the content is too long.
-\switchcolumn
+    
+    \section{Quick Guide}
 
-\cvsection{SKILLS}
-
-\begin{itemize}
-\item Strong communication and teamwork skills.
-\item Good problem-solving skills
-\end{itemize}
+    \begin{onecolentry}
+        \begin{highlightsforbulletentries}
 
 
-\divider
+        \item Each section title is arbitrary and each section contains a list of entries.
 
-{\large{Programming Languages:}\par}
+        \item There are 7 unique entry types: \textit{BulletEntry}, \textit{TextEntry}, \textit{EducationEntry}, \textit{ExperienceEntry}, \textit{NormalEntry}, \textit{PublicationEntry}, and \textit{OneLineEntry}.
 
-{\LaTeXraggedright
-\cvtag{C\#} \cvtag{.NET}
-\cvtag{TypeScript} \cvtag{JavaScript}
-\cvtag{HMTL} \cvtag{CSS} \cvtag{BASH}
-\cvtag{Python} \cvtag{SQL} \cvtag{C/C++}
-\par}
+        \item Select a section title, pick an entry type, and start writing your section!
 
-\divider
-% \smallskip
+        \item \href{https://docs.rendercv.com/user_guide/}{Here}, you can find a comprehensive user guide for RenderCV.
 
-{\large{Technologies and \\ Frameworks:}\par}
-\smallskip
-{\LaTeXraggedright
-\cvtag{.Net Core} \cvtag{Docker} \cvtag{GIT}
-\cvtag{REST APIs} \cvtag{NextJS} \cvtag{Tailwind}
-\cvtag{Node JS} \cvtag{GitHub} \cvtag{Linux} \cvtag{Svelte}
-\cvtag{Azure}
-\par}
 
-\end{paracol}
+        \end{highlightsforbulletentries}
+    \end{onecolentry}
 
+    \section{Education}
+
+
+
+        
+        \begin{twocolentry}{
+            
+            
+        \textit{Sept 2000 – May 2005}}
+            \textbf{University of Pennsylvania}
+
+            \textit{BS in Computer Science}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item GPA: 3.9/4.0 (\href{https://example.com}{a link to somewhere})
+                \item \textbf{Coursework:} Computer Architecture, Comparison of Learning Algorithms, Computational Theory
+            \end{highlights}
+        \end{onecolentry}
+
+
+
+    
+    \section{Experience}
+
+
+
+        
+        \begin{twocolentry}{
+        \textit{Cupertino, CA}    
+            
+        \textit{June 2005 – Aug 2007}}
+            \textbf{Software Engineer}
+            
+            \textit{Apple}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Reduced time to render user buddy lists by 75\% by implementing a prediction algorithm
+                \item Integrated iChat with Spotlight Search by creating a tool to extract metadata from saved chat transcripts and provide metadata to a system-wide search database
+                \item Redesigned chat file format and implemented backward compatibility for search
+            \end{highlights}
+        \end{onecolentry}
+
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+        \textit{Redmond, WA}    
+            
+        \textit{June 2003 – Aug 2003}}
+            \textbf{Software Engineer Intern}
+            
+            \textit{Microsoft}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Designed a UI for the VS open file switcher (Ctrl-Tab) and extended it to tool windows
+                \item Created a service to provide gradient across VS and VS add-ins, optimizing its performance via caching
+                \item Built an app to compute the similarity of all methods in a codebase, reducing the time from $\mathcal{O}(n^2)$ to $\mathcal{O}(n \log n)$
+                \item Created a test case generation tool that creates random XML docs from XML Schema
+                \item Automated the extraction and processing of large datasets from legacy systems using SQL and Perl scripts
+            \end{highlights}
+        \end{onecolentry}
+
+
+
+    
+    \section{Publications}
+
+
+
+        
+        \begin{samepage}
+            \begin{twocolentry}{
+                Jan 2004
+            }
+                \textbf{3D Finite Element Analysis of No-Insulation Coils}
+
+                \vspace{0.10 cm}
+
+                \mbox{Frodo Baggins}, \mbox{\textbf{\textit{John Doe}}}, \mbox{Samwise Gamgee}
+            \end{twocolentry}
+
+
+            \vspace{0.10 cm}
+
+            \begin{onecolentry}
+        \href{https://doi.org/10.1109/TASC.2023.3340648}{10.1109/TASC.2023.3340648}
+            \end{onecolentry}
+        \end{samepage}
+
+
+    
+    \section{Projects}
+
+
+
+        
+        \begin{twocolentry}{
+            
+            
+        \textit{\href{https://github.com/sinaatalay/rendercv}{github.com/name/repo}}}
+            \textbf{Multi-User Drawing Tool}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Developed an electronic classroom where multiple users can simultaneously view and draw on a "chalkboard" with each person's edits synchronized
+                \item Tools Used: C++, MFC
+            \end{highlights}
+        \end{onecolentry}
+
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+            
+            
+        \textit{\href{https://github.com/sinaatalay/rendercv}{github.com/name/repo}}}
+            \textbf{Synchronized Desktop Calendar}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Developed a desktop calendar with globally shared and synchronized calendars, allowing users to schedule meetings with other users
+                \item Tools Used: C\#, .NET, SQL, XML
+            \end{highlights}
+        \end{onecolentry}
+
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+            
+            
+        \textit{2002}}
+            \textbf{Custom Operating System}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built a UNIX-style OS with a scheduler, file system, text editor, and calculator
+                \item Tools Used: C
+            \end{highlights}
+        \end{onecolentry}
+
+
+
+    
+    \section{Technologies}
+
+
+
+        
+        \begin{onecolentry}
+            \textbf{Languages:} C++, C, Java, Objective-C, C\#, SQL, JavaScript
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Technologies:} .NET, Microsoft SQL Server, XCode, Interface Builder
+        \end{onecolentry}
+
+
+    
 
 \end{document}
