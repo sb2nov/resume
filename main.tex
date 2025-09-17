@@ -34,6 +34,8 @@
 \usepackage{ifthen} % for conditional statements
 \usepackage{needspace} % for avoiding page brake right after the section title
 \usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+\usepackage{datetime}
+\newdateformat{monthyear}{\monthname[\THEMONTH] \THEYEAR}
 
 % Ensure that generate pdf is machine readable/ATS parsable:
 \ifPDFTeX
@@ -43,8 +45,6 @@
     \usepackage[utf8]{inputenc}
     \usepackage{lmodern}
 \fi
-
-
 
 % Some settings:
 \AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
@@ -56,7 +56,7 @@
 \makeatletter
 \let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
 \patchcmd{\ps@customFooterStyle}{\thepage}{
-    \color{gray}\textit{\small John Doe - Page \thepage{} of \pageref*{LastPage}}
+    \color{gray}\textit{\small Simanga Hendry Khoza - Page \thepage{} of \pageref*{LastPage}}
 }{}{} % replace number by desired string
 \makeatother
 \pagestyle{customFooterStyle}
@@ -64,15 +64,12 @@
 \titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
 
 \titlespacing{\section}{
-    % left space:
     -1pt
 }{
-    % top space:
     0.3 cm
 }{
-    % bottom space:
     0.2 cm
-} % section title spacing
+} 
 
 \renewcommand\labelitemi{$\circ$} % custom bullet points
 \newenvironment{highlights}{
@@ -155,112 +152,106 @@
 
     \placelastupdatedtext
     \begin{header}
-        \textbf{\fontsize{24 pt}{24 pt}\selectfont John Doe}
+        \textbf{\fontsize{24 pt}{24 pt}\selectfont Simanga Hendry Khoza}
 
         \vspace{0.3 cm}
 
         \normalsize
-        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Your Location}%
+        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Pretoria, Gauteng, RSA}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{mailto:youremail@yourdomain.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}youremail@yourdomain.com}}%
+        \mbox{\hrefWithoutArrow{mailto:h3khoza@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}h3khoza@gmail.com
+        }}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{tel:+90-541-999-99-99}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}0541 999 99 99}}%
+        \mbox{\hrefWithoutArrow{tel:0812490306 }{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}0812490306}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://yourwebsite.com/}{\color{black}{\footnotesize\faLink}\hspace*{0.13cm}yourwebsite.com}}%
+        \mbox{\hrefWithoutArrow{https://simanga.dev/}{\color{black}{\footnotesize\faLink}\hspace*{0.13cm}https://simanga.dev/}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://linkedin.com/in/yourusername}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}yourusername}}%
+        \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/simanga/}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}https://www.linkedin.com/in/simanga/}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://github.com/yourusername}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}yourusername}}%
+        \mbox{\hrefWithoutArrow{https://github.com/simanga-dev}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}https://github.com/simanga-dev }}%
+
     \end{header}
 
     \vspace{0.3 cm - 0.3 cm}
 
-
-    \section{Welcome to RenderCV!}
-
-
-
-        
+    \section{Objective}
         \begin{onecolentry}
-            \href{https://rendercv.com}{RenderCV} is a LaTeX-based CV/resume version-control and maintenance app. It allows you to create a high-quality CV or resume as a PDF file from a YAML file, with \textbf{Markdown syntax support} and \textbf{complete control over the LaTeX code}.
+            A highly experienced Senior Oracle Database Administrator with over eight years of expertise in managing, optimizing, and securing \textbf{Oracle 11G} and \textbf{12C} databases in high-availability \textbf{Linux} environments. Seeking to leverage extensive skills in \textbf{RAC}, \textbf{super clustering}, performance tuning, and disaster recovery to ensure the stability, integrity, and efficiency of the Fund's critical database systems.
         \end{onecolentry}
-
-        \vspace{0.2 cm}
-
-        \begin{onecolentry}
-            The boilerplate content was inspired by \href{https://github.com/dnl-blkv/mcdowell-cv}{Gayle McDowell}.
-        \end{onecolentry}
-
-
-    
-    \section{Quick Guide}
+    \section{Quick Skill Overview}
 
     \begin{onecolentry}
-        \begin{highlightsforbulletentries}
-
-
-        \item Each section title is arbitrary and each section contains a list of entries.
-
-        \item There are 7 unique entry types: \textit{BulletEntry}, \textit{TextEntry}, \textit{EducationEntry}, \textit{ExperienceEntry}, \textit{NormalEntry}, \textit{PublicationEntry}, and \textit{OneLineEntry}.
-
-        \item Select a section title, pick an entry type, and start writing your section!
-
-        \item \href{https://docs.rendercv.com/user_guide/}{Here}, you can find a comprehensive user guide for RenderCV.
-
-
-        \end{highlightsforbulletentries}
+        \begin{onecolentry}
+            \textbf{Languages:} C++, C, Java, Objective-C, C\#, SQL, JavaScript, Bash
+        \end{onecolentry}
+        \vspace{0.2 cm}
+        \begin{onecolentry}
+            \textbf{Technologies:} .NET, Microsoft SQL Server, XCode, Postgress DB, \textit{Oracle 12c}, \textit{Oracle 11g}, MySQL
+        \end{onecolentry}
+        \vspace{0.2 cm}
+        \begin{onecolentry}
+            \textbf{Tools:} \textbf{Linux} (Debian, Arch Linux, Ubuntu Linux), Windows Server, Neovim, Docker
+        \end{onecolentry}
     \end{onecolentry}
 
     \section{Education}
 
-
-
-        
         \begin{twocolentry}{
-            
-            
-        \textit{Sept 2000 – May 2005}}
-            \textbf{University of Pennsylvania}
 
-            \textit{BS in Computer Science}
+        \textit{Jan 2018 – Dec 2021}}
+            \textbf{Tshwane University of Technology}
+            \newline
+            \textit{N.Dip Computer Systems Engineering}
         \end{twocolentry}
 
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item GPA: 3.9/4.0 (\href{https://example.com}{a link to somewhere})
-                \item \textbf{Coursework:} Computer Architecture, Comparison of Learning Algorithms, Computational Theory
+                \item AVG 77\% (\href{https://github.com/simanga-dev/simanga-dev.github.io/blob/40c3be6e23f2a5a44615d7b048085a03802c4972/public/static/documents/NDip_Computer_Systems_PhasingOut_2022.pdf}{link to all modules})
+                \item \textbf{Coursework:} Database Management Computer Architecture, Comparison of Learning Algorithms, Computational Theory
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+
+        \textit{– – 2013}}
+            \textbf{Sincobile Secondary School}
+            \newline
+            \textit{Grade 12 (Matric)}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Batcherlose % (\href{https://github.com/simanga-dev/simanga-dev.github.io/blob/40c3be6e23f2a5a44615d7b048085a03802c4972/public/static/documents/NDip_Computer_Systems_PhasingOut_2022.pdf}{link to all modules})
+                \item \textbf{Coursework:} Mathematics, Physical Sciences, Life Sciences Geography, English
             \end{highlights}
         \end{onecolentry}
 
 
-
-    
     \section{Experience}
 
-
-
-        
         \begin{twocolentry}{
-        \textit{Cupertino, CA}    
-            
-        \textit{June 2005 – Aug 2007}}
+        \textit{Pretoria, Centurion}    
+        \textit{Aug 2023 – current}}
             \textbf{Software Engineer}
-            
-            \textit{Apple}
+            \newline
+            \textit{Express Employment Professionals}
         \end{twocolentry}
 
-        \vspace{0.10 cm}
+        \vspace{0.20 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Reduced time to render user buddy lists by 75\% by implementing a prediction algorithm
@@ -269,66 +260,47 @@
             \end{highlights}
         \end{onecolentry}
 
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+        \textit{Pretoria, Broklyn}    
+        \textit{June 2022 – Aug 2023}}
+            \textbf{Software Engineer Junior}
+            \newline
+            \textit{Kriterion AI}
+        \end{twocolentry}
+
+        \vspace{0.20 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Reduced time to render user buddy lists by 75\% by implementing a prediction algorithm
+                \item Integrated iChat with Spotlight Search by creating a tool to extract metadata from saved chat transcripts and provide metadata to a system-wide search database
+                \item Redesigned chat file format and implemented backward compatibility for search
+            \end{highlights}
+        \end{onecolentry}
 
         \vspace{0.2 cm}
 
         \begin{twocolentry}{
-        \textit{Redmond, WA}    
-            
-        \textit{June 2003 – Aug 2003}}
-            \textbf{Software Engineer Intern}
-            
-            \textit{Microsoft}
+        \textit{Johannesburg,Gemiston}    
+        \textit{Jan 2020 – March 2021}}
+            \textbf{Software Developer Intern}
+            \newline
+            \textit{Copalcor (PTY)}
         \end{twocolentry}
 
-        \vspace{0.10 cm}
+        \vspace{0.20 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Designed a UI for the VS open file switcher (Ctrl-Tab) and extended it to tool windows
-                \item Created a service to provide gradient across VS and VS add-ins, optimizing its performance via caching
-                \item Built an app to compute the similarity of all methods in a codebase, reducing the time from $\mathcal{O}(n^2)$ to $\mathcal{O}(n \log n)$
-                \item Created a test case generation tool that creates random XML docs from XML Schema
-                \item Automated the extraction and processing of large datasets from legacy systems using SQL and Perl scripts
+                \item Reduced time to render user buddy lists by 75\% by implementing a prediction algorithm
+                \item Integrated iChat with Spotlight Search by creating a tool to extract metadata from saved chat transcripts and provide metadata to a system-wide search database
+                \item Redesigned chat file format and implemented backward compatibility for search
             \end{highlights}
         \end{onecolentry}
 
-
-
-    
-    \section{Publications}
-
-
-
-        
-        \begin{samepage}
-            \begin{twocolentry}{
-                Jan 2004
-            }
-                \textbf{3D Finite Element Analysis of No-Insulation Coils}
-
-                \vspace{0.10 cm}
-
-                \mbox{Frodo Baggins}, \mbox{\textbf{\textit{John Doe}}}, \mbox{Samwise Gamgee}
-            \end{twocolentry}
-
-
-            \vspace{0.10 cm}
-
-            \begin{onecolentry}
-        \href{https://doi.org/10.1109/TASC.2023.3340648}{10.1109/TASC.2023.3340648}
-            \end{onecolentry}
-        \end{samepage}
-
-
-    
     \section{Projects}
 
-
-
-        
         \begin{twocolentry}{
-            
-            
         \textit{\href{https://github.com/sinaatalay/rendercv}{github.com/name/repo}}}
             \textbf{Multi-User Drawing Tool}
         \end{twocolentry}
@@ -341,12 +313,10 @@
             \end{highlights}
         \end{onecolentry}
 
-
         \vspace{0.2 cm}
 
         \begin{twocolentry}{
-            
-            
+
         \textit{\href{https://github.com/sinaatalay/rendercv}{github.com/name/repo}}}
             \textbf{Synchronized Desktop Calendar}
         \end{twocolentry}
@@ -359,43 +329,19 @@
             \end{highlights}
         \end{onecolentry}
 
+    \section{Certificate}
 
-        \vspace{0.2 cm}
-
-        \begin{twocolentry}{
-            
-            
-        \textit{2002}}
-            \textbf{Custom Operating System}
-        \end{twocolentry}
-
-        \vspace{0.10 cm}
         \begin{onecolentry}
-            \begin{highlights}
-                \item Built a UNIX-style OS with a scheduler, file system, text editor, and calculator
-                \item Tools Used: C
-            \end{highlights}
+            \textbf{Azure DevOps Engineer Expert:} \textit{issued: 8/08/2021}  \href{https://doi.org/10.1109/TASC.2023.3340648}{https://cutt.ly/DRI8NYP}
         \end{onecolentry}
-
-
-
-    
-    \section{Technologies}
-
-
-
-        
+        \vspace{0.2 cm}
         \begin{onecolentry}
-            \textbf{Languages:} C++, C, Java, Objective-C, C\#, SQL, JavaScript
+            \textbf{Azure Developer Associate} \textit{issued: 8/06/2021}  \href{https://doi.org/10.1109/TASC.2023.3340648}{https://cutt.ly/tRI4WYo}
         \end{onecolentry}
 
         \vspace{0.2 cm}
-
         \begin{onecolentry}
-            \textbf{Technologies:} .NET, Microsoft SQL Server, XCode, Interface Builder
+            \textbf{Azure Fundamentals} \textit{issued: 26/03/2021}  \href{https://doi.org/10.1109/TASC.2023.3340648}{https://cutt.ly/sRI3GgJ}
         \end{onecolentry}
-
-
-    
 
 \end{document}
